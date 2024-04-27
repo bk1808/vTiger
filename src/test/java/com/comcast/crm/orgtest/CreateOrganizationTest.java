@@ -57,14 +57,13 @@ public class CreateOrganizationTest {
 		}
 //		step-1: login to application
 		wLib.waitForPageToLoad(driver);
-		driver.get(url);
 		
 		LoginPage lp=new LoginPage(driver);
 //		lp.getUsernameEdt().sendKeys(un);
 //		lp.getPasswordEdt().sendKeys(pwd);
 //		lp.getLoginBtn().click();
 
-		lp.loginToApp(un, pwd);
+		lp.loginToApp(url, un, pwd);
 		
 //		step-2: navigate to organization module 
 		HomePage hp=new HomePage(driver);

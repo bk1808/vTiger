@@ -15,6 +15,9 @@ public class ContactsInfoPage extends WebDriverUtility {
 	@FindBy (className = "dvHeaderText")
 	private WebElement headerContact;
 	
+	@FindBy (id = "mouseArea_Organization Name")
+	private WebElement actualOrgName;
+	
 	public ContactsInfoPage(WebDriver driver) {
 		PageFactory.initElements(driver, this);
 	}
@@ -25,6 +28,10 @@ public class ContactsInfoPage extends WebDriverUtility {
 
 	public WebElement getActualLastName() {
 		return actualLastName;
+	}
+
+	public WebElement getActualOrgName() {
+		return actualOrgName;
 	}
 	
 	

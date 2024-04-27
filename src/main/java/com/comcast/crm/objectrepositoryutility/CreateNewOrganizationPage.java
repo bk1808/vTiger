@@ -51,9 +51,10 @@ public class CreateNewOrganizationPage extends WebDriverUtility{
 	}
 
 	// we will use business method since there are two actions needs to be peroformed together	
-	public void createOrg(String orgName) {
+	public void createOrg(String orgName) throws InterruptedException {
 		orgNameEdt.sendKeys(orgName);
 		saveBtn.click();
+		Thread.sleep(3000);
 	}
 
 	public void createOrg(String orgName, String industry, String type, WebDriverUtility wLib) {

@@ -49,8 +49,9 @@ public class LoginPage extends WebDriverUtility{
 	
 //	multiple elements utilization using this single method we can perform action
 // this method is specific to business which cannot be used any other application
-	public void loginToApp(String username, String password) {
+	public void loginToApp(String url, String username, String password) {
 		driver.manage().window().maximize();
+		driver.get(url);
 		usernameEdt.sendKeys(username);
 		passwordEdt.sendKeys(password);
 		loginBtn.click();

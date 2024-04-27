@@ -25,7 +25,7 @@ public class OrganizationInfoPage extends WebDriverUtility{
 	WebDriver driver;
 	public OrganizationInfoPage(WebDriver driver) {
 		this.driver=driver;
-		PageFactory.initElements(driver, this);;
+		PageFactory.initElements(driver, this);
 	}
 	
 	public WebElement getHeaderMsg() {
@@ -41,6 +41,7 @@ public class OrganizationInfoPage extends WebDriverUtility{
 	}
 
 	public WebElement getContactsLink() {
+		
 		return contactsLink;
 	}
 

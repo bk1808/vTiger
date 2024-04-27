@@ -59,23 +59,21 @@ public class DeleteOrganizationTest {
 			driver=new ChromeDriver();	
 		}
 //		step-1: login to application
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
-		driver.get(url);
-		
+		wLib.waitForPageToLoad(driver);
 		LoginPage lp=new LoginPage(driver);
 //		lp.getUsernameEdt().sendKeys(un);
 //		lp.getPasswordEdt().sendKeys(pwd);
 //		lp.getLoginBtn().click();
 
-		lp.loginToApp(un, pwd);
+		lp.loginToApp(url, un, pwd);
 		
 //		step-2: navigate to organization module 
 		HomePage hp=new HomePage(driver);
 		hp.getOrgLink().click();		
 		
 //		step-3: click on create organization button
-		OrganizationsPage cnp=new OrganizationsPage(driver);
-		cnp.getCreateNewOrgBtn().click();		
+		OrganizationsPage onp=new OrganizationsPage(driver);
+		onp.getCreateNewOrgBtn().click();		
 		
 //		step-4: enter all the details and create new organization
 		CreateNewOrganizationPage cnop=new CreateNewOrganizationPage(driver);
@@ -95,13 +93,13 @@ public class DeleteOrganizationTest {
 //		go back to organizations page and then search for organization
 		
 		hp.getOrgLink().click();
-		cnp.getSearchOrgName().sendKeys(orgName);
+		onp.getSearchOrgName().sendKeys(orgName);
 		
-		wLib.select(cnp.getSearchDD(), orgIn);
-		cnp.getSearchNowBtn().click();
+		wLib.select(onp.getSearchDD(), orgIn);
+		onp.getSearchNowBtn().click();
 		
 //		In dynamic web table select and delete the organization
-		cnp.dynamicData(orgName);
+		onp.dynamicData(orgName);
 		wLib.switchToAlertAccept(driver);
 		
 //		step-5: cick on logout

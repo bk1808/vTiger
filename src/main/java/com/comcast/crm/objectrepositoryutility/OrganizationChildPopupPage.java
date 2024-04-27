@@ -13,24 +13,49 @@ public class OrganizationChildPopupPage extends WebDriverUtility {
 	@FindBy (id = "search_txt")
 	private WebElement orgSearchEdt;
 	
-	@FindBy (name = "search")
-	private WebElement orgSearchDD;
-	
 	@FindBy (name = "search_field")
-	private WebElement selectEle;
+	private WebElement selectEleDD;
 	
 	@FindBy (name = "search")
 	private WebElement searchBtn;
 	
 	WebDriver driver;
+	
+// this is how we need to initialise the web elements without pageFactory.initElements() method
+//	public OrganizationChildPopupPage(WebDriver driver, WebElement orgSearchEdt, 
+//			WebElement orgSearchDD, WebElement selectEle, WebElement searchBtn) {
+//		this.driver=driver;
+//		this.orgSearchEdt=orgSearchEdt;
+//		this.orgSearchDD=orgSearchDD;
+//		this.selectEle=selectEle;
+//		this.searchBtn=searchBtn;
+//	}
+	
+	
+	
+	
 	public OrganizationChildPopupPage(WebDriver driver) {
 		this.driver=driver;
 		PageFactory.initElements(driver, this);
 	}
 	
-	public void selectSearchDD(String value, String orgName) {
-		select(selectEle, value);
-		searchBtn.click();
+	public WebElement getOrgSearchEdt() {
+		return orgSearchEdt;
+	}
+
+
+	public WebElement getSelectEleDD() {
+		return selectEleDD;
+	}
+
+	public WebElement getSearchBtn() {
+		return searchBtn;
+	}
+
+	public void selectSearchDD(String orgName, String orgIn) {
+		orgSearchEdt.sendKeys(orgName);
+		select(getSelectEleDD(), orgIn);
+		getSearchBtn().click();
 		driver.findElement(By.xpath("//a[text()='"+orgName+"']")).click();
 	}
 	

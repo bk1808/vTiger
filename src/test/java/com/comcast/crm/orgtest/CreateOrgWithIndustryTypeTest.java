@@ -56,16 +56,13 @@ public class CreateOrgWithIndustryTypeTest {
 			driver=new ChromeDriver();	
 		}
 		//		step-1: login to application
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
-		driver.get(url);
-
-
+		wLib.waitForPageToLoad(driver);
 		LoginPage lp=new LoginPage(driver);
 		//		lp.getUsernameEdt().sendKeys(un);
 		//		lp.getPasswordEdt().sendKeys(pwd);
 		//		lp.getLoginBtn().click();
 
-		lp.loginToApp(un, pwd);
+		lp.loginToApp(url, un, pwd);
 
 		//		step-2: navigate to organization module 
 		HomePage hp=new HomePage(driver);

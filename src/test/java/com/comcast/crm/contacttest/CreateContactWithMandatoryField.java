@@ -37,7 +37,7 @@ public class CreateContactWithMandatoryField {
 		FileUtility fLib=new FileUtility();
 		JavaUtility jLib=new JavaUtility();
 		ExcelUtility eLib=new ExcelUtility();
-		
+		WebDriverUtility wLib=new WebDriverUtility();
 		
 		String browser = fLib.getDataFromPropertiesFile("browser");
 		String url = fLib.getDataFromPropertiesFile("url");
@@ -64,12 +64,9 @@ public class CreateContactWithMandatoryField {
 			driver=new ChromeDriver();	
 		}
 		//		step-1: login to application
-		
+		wLib.waitForPageToLoad(driver);
 		LoginPage lp= new LoginPage(driver);
-	
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
-		driver.get(url);
-		lp.loginToApp(un, pwd);
+		lp.loginToApp(url, un, pwd);
 
 		//		step-2: navigate to contacts module 
 		HomePage hp=new HomePage(driver);

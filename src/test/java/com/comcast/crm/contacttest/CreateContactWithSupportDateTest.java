@@ -65,8 +65,7 @@ public class CreateContactWithSupportDateTest {
 		//		step-1: login to 
 		wLib.waitForPageToLoad(driver);
 		LoginPage lp=new LoginPage(driver);
-		driver.get(url);
-		lp.loginToApp(un, pwd);
+		lp.loginToApp(url, un, pwd);
 		
 		//		step-2: navigate to contacts module
 		HomePage hp=new HomePage(driver);
