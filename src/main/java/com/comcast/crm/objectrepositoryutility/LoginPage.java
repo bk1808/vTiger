@@ -7,6 +7,12 @@ import org.openqa.selenium.support.PageFactory;
 
 import com.comcast.crm.generic.webdriverutility.WebDriverUtility;
 
+/**
+ * Page contains Login page elements, and business library such as login()
+ * 
+ * @author Praveen
+ *  10-May-2024
+ */
 public class LoginPage extends WebDriverUtility{
 
 	/* RULES to create classes
@@ -27,7 +33,7 @@ public class LoginPage extends WebDriverUtility{
 	private WebElement loginBtn;
 	
 //	initialization should be done inside a constructor
-	WebDriver driver;//declare driver object as global variable so this can be used across the class
+	WebDriver driver;
 	public LoginPage(WebDriver driver) {
 		this.driver=driver;
 		PageFactory.initElements(driver, this);
@@ -49,9 +55,18 @@ public class LoginPage extends WebDriverUtility{
 	
 //	multiple elements utilization using this single method we can perform action
 // this method is specific to business which cannot be used any other application
+	/**
+	 * This method is for login to application based on url, username, password arguments
+	 * 
+	 * @param url
+	 * @param username
+	 * @param password
+	 */
+	
 	public void loginToApp(String url, String username, String password) {
-		driver.manage().window().maximize();
-		driver.get(url);
+		maximizeWindow(driver);
+		waitForPageToLoad(driver);
+		getURL(driver, url);
 		usernameEdt.sendKeys(username);
 		passwordEdt.sendKeys(password);
 		loginBtn.click();

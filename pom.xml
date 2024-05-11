@@ -10,21 +10,29 @@
 <dependency>
     <groupId>org.seleniumhq.selenium</groupId>
     <artifactId>selenium-java</artifactId>
-    <version>4.11.0</version>
+    <version>4.13.0</version>
 </dependency>
+
 
 <!--Apache Poi dependency for Excel-->
 <!-- https://mvnrepository.com/artifact/org.apache.poi/poi -->
 <dependency>
     <groupId>org.apache.poi</groupId>
     <artifactId>poi</artifactId>
-    <version>5.2.5</version>
+    <version>4.1.2</version>
 </dependency>
 <!-- https://mvnrepository.com/artifact/org.apache.poi/poi-ooxml-schemas -->
 <dependency>
     <groupId>org.apache.poi</groupId>
     <artifactId>poi-ooxml</artifactId>
-    <version>5.2.5</version>
+    <version>4.1.2</version>
+</dependency>
+
+<!-- https://mvnrepository.com/artifact/org.apache.maven/maven-core -->
+<dependency>
+    <groupId>org.apache.maven</groupId>
+    <artifactId>maven-core</artifactId>
+    <version>3.9.6</version>
 </dependency>
 
 <!--TestNG dependency for framework-->
@@ -33,7 +41,6 @@
     <groupId>org.testng</groupId>
     <artifactId>testng</artifactId>
     <version>7.7.1</version>
-    <scope>test</scope>
 </dependency>
 
 <!--JSON simple dependency to read JSON file-->
@@ -43,6 +50,7 @@
     <artifactId>json-simple</artifactId>
     <version>1.1.1</version>
 </dependency>
+<!--Remaining all dependency will go below --><!-- tag to write any comment -->
 
 <!--MySQL dependency to read and insert into DataBase-->
 <!-- https://mvnrepository.com/artifact/com.mysql/mysql-connector-j -->
@@ -51,6 +59,21 @@
     <artifactId>mysql-connector-j</artifactId>
     <version>8.3.0</version>
 </dependency>
-<!--Remaining all dependency will go below --><!-- tag to write any comment -->
- </dependencies>
+<!--Extent report dependency to get the high level and low level reports-->
+<!-- https://mvnrepository.com/artifact/com.aventstack/extentreports -->
+<dependency>
+    <groupId>com.aventstack</groupId>
+    <artifactId>extentreports</artifactId>
+    <version>5.0.9</version>
+</dependency>
+
+<!-- https://mvnrepository.com/artifact/org.eclipse.mylyn.github/org.eclipse.egit.github.core -->
+<dependency>
+    <groupId>org.eclipse.mylyn.github</groupId>
+    <artifactId>org.eclipse.egit.github.core</artifactId>
+    <version>2.1.5</version>
+</dependency>
+</dependencies>
 </project>
+
+ 

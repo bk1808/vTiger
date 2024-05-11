@@ -1,79 +1,187 @@
 package com.comcast.crm.orgtest;
 
 import java.io.IOException;
-import java.time.Duration;
-import java.util.Random;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.edge.EdgeDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.PageFactory;
 
-import com.comcast.crm.generic.fileutility.ExcelUtility;
-import com.comcast.crm.generic.fileutility.FileUtility;
-import com.comcast.crm.generic.webdriverutility.JavaUtility;
-import com.comcast.crm.generic.webdriverutility.WebDriverUtility;
+import org.apache.poi.EncryptedDocumentException;
+import org.junit.Assert;
+import org.testng.Reporter;
+import org.testng.annotations.Listeners;
+import org.testng.annotations.Test;
+import org.testng.asserts.SoftAssert;
+
+import com.aventstack.extentreports.Status;
+import com.comcast.crm.basetest.BaseClass;
+import com.comcast.crm.generic.webdriverutility.UtilityClassObject;
 import com.comcast.crm.objectrepositoryutility.CreateNewOrganizationPage;
 import com.comcast.crm.objectrepositoryutility.HomePage;
-import com.comcast.crm.objectrepositoryutility.LoginPage;
 import com.comcast.crm.objectrepositoryutility.OrganizationInfoPage;
 import com.comcast.crm.objectrepositoryutility.OrganizationsPage;
 
-public class CreateOrganizationTest {
+@Listeners (com.comcast.crm.generic.listenerutility.ListenerImplementationClass.class)
+public class CreateOrganizationTest extends BaseClass {
 
-	public static void main(String[] args) throws IOException, InterruptedException {
-//		create object of FileUtility for reading the data from commondata.properties and fetch the details
-		FileUtility flib=new FileUtility();
-		JavaUtility jLib=new JavaUtility();
-		ExcelUtility eLib=new ExcelUtility();
-		WebDriverUtility wLib=new WebDriverUtility();
-		
-		String browser = flib.getDataFromPropertiesFile("browser");
-		String url = flib.getDataFromPropertiesFile("url");
-		String un = flib.getDataFromPropertiesFile("username");
-		String pwd = flib.getDataFromPropertiesFile("password");
-		
+//	Test-Case: 1
+	@Test (/*groups = "smoke test"*/)
+	public void createOrganizationTest() throws IOException, InterruptedException {
+//		create object of FileUtility for reading the data from commondata.properties and fetch the details		
 //		create the random number using Random Class of Java.util package
 //		create an object of ExcelUtility class to read the data from excel file
-		
-		String orgName=eLib.getDataFromExcel("org", 1, 2)+jLib.getRandomNumber();;
-			
-		WebDriver driver=null;
-		
-		if(browser.equals("chrome")) {
-			driver=new ChromeDriver();	
-		}
-		else if(browser.equals("firefox")) {
-			driver=new FirefoxDriver();
-		}
-		else if(browser.equals("edge")) {
-			driver=new EdgeDriver();
-		}
-		else {
-			driver=new ChromeDriver();	
-		}
+				
 //		step-1: login to application
-		wLib.waitForPageToLoad(driver);
-		
-		LoginPage lp=new LoginPage(driver);
 //		lp.getUsernameEdt().sendKeys(un);
 //		lp.getPasswordEdt().sendKeys(pwd);
 //		lp.getLoginBtn().click();
-
-		lp.loginToApp(url, un, pwd);
-		
+	
 //		step-2: navigate to organization module 
+		UtilityClassObject.gettest().log(Status.INFO, "navigate to organization page");
+		
+		String orgName=eLib.getDataFromExcel("org", 1, 2)+jLib.getRandomNumber();	//use 2 in place of column
+		
 		HomePage hp=new HomePage(driver);
 		hp.getOrgLink().click();		
 		
 //		step-3: click on create organization button
+		UtilityClassObject.gettest().log(Status.INFO, "navigate to create organization page");
+		OrganizationsPage onp=new OrganizationsPage(driver);
+//		onp.getCreateNewOrgBtn().click();		
+		
+//		step-4: enter all the details and create new organization
+		UtilityClassObject.gettest().log(Status.INFO, "create organization");
+		CreateNewOrganizationPage cnop=new CreateNewOrganizationPage(driver);
+		cnop.createOrg(orgName);
+		
+		UtilityClassObject.gettest().log(Status.INFO, orgName+"new organization created");
+//		verify organization name
+		UtilityClassObject.gettest().log(Status.PASS, "organization name text field is verified");
+		OrganizationInfoPage oip=new OrganizationInfoPage(driver);
+		String actOrgName=oip.getHeaderMsg().getText();
+		
+		boolean status=actOrgName.contains(orgName);
+		Assert.assertTrue(status);
+		
+/*		if(actOrgName.contains(orgName)) {
+			System.out.println(orgName+" is verified==PASS");
+		}
+		else {
+			System.out.println(orgName+" is not verified==FAIL");
+		}*/		
+		
+	}
+
+//	Test-Case: 2
+	@Test (/*groups = "regression test"*/)
+	public void createOrganizationWithIndustry() throws EncryptedDocumentException, IOException {
+		
+		String orgName=eLib.getDataFromExcel("org", 1, 2)+jLib.getRandomNumber();
+		String industry=eLib.getDataFromExcel("org", 4, 3);
+		String type=eLib.getDataFromExcel("org", 4, 4);
+		
+//		step-2: navigate to organization module 
+		UtilityClassObject.gettest().log(Status.INFO, "navigate to organization page");
+		HomePage hp=new HomePage(driver);
+		hp.getOrgLink().click();	
+
+		//		step-3: click on create organization button
+		UtilityClassObject.gettest().log(Status.INFO, "navigate to create organization page");
+		OrganizationsPage cnp=new OrganizationsPage(driver);
+		cnp.getCreateNewOrgBtn().click();		
+
+		//		step-4: enter all the details and create new organization
+		UtilityClassObject.gettest().log(Status.INFO, orgName+"create organization page with industry and type");
+		CreateNewOrganizationPage cnop=new CreateNewOrganizationPage(driver);
+		cnop.createOrg(orgName, industry, type, wLib);
+
+		//		verify the drop-down industry and type info
+
+		OrganizationInfoPage oip=new OrganizationInfoPage(driver);
+		String actIndustry = oip.getIndustry().getText();
+		String actType = oip.getType().getText();
+		
+		SoftAssert soft = new SoftAssert();
+		boolean industryDropDown = actIndustry.equals(industry);
+		soft.assertTrue(industryDropDown);
+		UtilityClassObject.gettest().log(Status.PASS, "industry drop down field is verified");
+	
+	/*	if(actIndustry.equals(industry)) {
+			System.out.println(industry+" is verified==PASS");
+		}
+		else {
+			System.out.println(industry+" is not verified==FAIL");
+		}*/
+		
+		boolean typeDropDown = actType.equals(type);
+		soft.assertTrue(typeDropDown);
+		UtilityClassObject.gettest().log(Status.PASS, "industry type drop down field is verified");
+		
+		/*if(actType.equals(type)) {
+			System.out.println(type+" is verified==PASS");
+		}
+		else {
+			System.out.println(type+" is not verified==FAIL");
+		}*/
+		soft.assertAll();
+	}
+	
+	
+//	Test-Case: 3
+	@Test (/*groups = "regression test"*/)
+	public void createOrganizationWithPhoneNumber() throws EncryptedDocumentException, IOException {
+		
+		String orgName=eLib.getDataFromExcel("org", 1, 2)+jLib.getRandomNumber();
+		String phoneNum=eLib.getDataFromExcel("org", 7, 3)+jLib.getRandomNumber();
+
+//		step-2: navigate to organization module 
+		UtilityClassObject.gettest().log(Status.INFO, "navigate to organization page");
+		HomePage hp=new HomePage(driver);
+		hp.getOrgLink().click();	
+
+		//		step-3: click on create organization button
+		UtilityClassObject.gettest().log(Status.INFO, "navigate to create new organization page");
+		OrganizationsPage cnp=new OrganizationsPage(driver);
+		cnp.getCreateNewOrgBtn().click();		
+
+		//		step-4: enter all the details and create new organization
+		UtilityClassObject.gettest().log(Status.INFO, "create new organization");
+		CreateNewOrganizationPage cnop=new CreateNewOrganizationPage(driver);
+		cnop.createOrg(orgName, phoneNum);
+		
+		//		verify the phone number info
+		String actualPhoneNum = cnop.getActualPhNum().getText();
+	
+		SoftAssert soft = new SoftAssert();
+		soft.assertEquals(actualPhoneNum, phoneNum);
+		UtilityClassObject.gettest().log(Status.PASS, "phone number text field is verified");
+		
+		/*if(actualPhoneNum.equals(phoneNum)) {
+			System.out.println(phoneNum+" is created==PASS");
+		}
+		else {
+			System.out.println(phoneNum+" is not created==FAIL");
+		}*/
+		soft.assertAll();
+		
+	}
+	
+	
+//	Test-Case: 4
+	@Test (/*groups = "regression test"*/)
+	public void deleteOrganizationTest() throws EncryptedDocumentException, IOException, InterruptedException {
+		
+		String orgName=eLib.getDataFromExcel("org", 10, 2)+jLib.getRandomNumber();
+		String orgIn=eLib.getDataFromExcel("org", 10, 3);
+		
+//		step-2: navigate to organization module 
+		UtilityClassObject.gettest().log(Status.INFO, "navigate to organization page");
+		HomePage hp=new HomePage(driver);
+		hp.getOrgLink().click();		
+		
+//		step-3: click on create organization button
+		UtilityClassObject.gettest().log(Status.INFO, "navigate to create new organization page");
 		OrganizationsPage onp=new OrganizationsPage(driver);
 		onp.getCreateNewOrgBtn().click();		
 		
 //		step-4: enter all the details and create new organization
+		UtilityClassObject.gettest().log(Status.INFO, "create new organization");
 		CreateNewOrganizationPage cnop=new CreateNewOrganizationPage(driver);
 		cnop.createOrg(orgName);
 		
@@ -81,18 +189,34 @@ public class CreateOrganizationTest {
 		OrganizationInfoPage oip=new OrganizationInfoPage(driver);
 		String actOrgName=oip.getHeaderMsg().getText();
 		
-		if(actOrgName.contains(orgName)) {
+		SoftAssert soft = new SoftAssert();
+		
+		boolean organizationName = actOrgName.contains(orgName);
+		soft.assertTrue(organizationName);
+		UtilityClassObject.gettest().log(Status.PASS, "organization name text field is verified");		
+		
+		/*if(actOrgName.contains(orgName)) {
 			System.out.println(orgName+" is verified==PASS");
 		}
 		else {
 			System.out.println(orgName+" is not verified==FAIL");
-		}		
+		}*/	
 		
-//		step-5: cick on logout
+//		go back to organizations page and then search for organization
+		UtilityClassObject.gettest().log(Status.INFO, "search for organization");
+		hp.getOrgLink().click();
+		onp.getSearchOrgName().sendKeys(orgName);
 		
-		hp.logOut();
-		driver.quit();
+		wLib.select(onp.getSearchDD(), orgIn);
+		onp.getSearchNowBtn().click();
 		
+//		In dynamic web table select and delete the organization
+		UtilityClassObject.gettest().log(Status.PASS, "delete the organization");
+		onp.dynamicData(orgName);
+		wLib.switchToAlertAccept(driver);
+		
+		soft.assertAll();
 	}
+	
 
 }

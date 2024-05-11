@@ -1,25 +1,11 @@
 package com.comcast.crm.contacttest;
 
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.text.SimpleDateFormat;
-import java.time.Duration;
-import java.util.Calendar;
-import java.util.Date;
-import java.util.Properties;
-import java.util.Random;
-import java.util.concurrent.atomic.AtomicIntegerFieldUpdater;
-
-import org.apache.poi.ss.usermodel.Workbook;
-import org.apache.poi.ss.usermodel.WorkbookFactory;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.interactions.Actions;
 
+import com.comcast.crm.basetest.BaseClass;
 import com.comcast.crm.generic.fileutility.ExcelUtility;
 import com.comcast.crm.generic.fileutility.FileUtility;
 import com.comcast.crm.generic.webdriverutility.JavaUtility;
@@ -29,7 +15,7 @@ import com.comcast.crm.objectrepositoryutility.CreateNewContactsPage;
 import com.comcast.crm.objectrepositoryutility.HomePage;
 import com.comcast.crm.objectrepositoryutility.LoginPage;
 
-public class CreateContactWithSupportDateTest {
+public class CreateContactWithSupportDateTest extends BaseClass {
 
 	public static void main(String[] args) throws Throwable {		
 		//		step-1: read the data from property file

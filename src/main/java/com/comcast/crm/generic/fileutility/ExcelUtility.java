@@ -14,7 +14,7 @@ public class ExcelUtility {
 		
 		FileInputStream fis=new FileInputStream("./testdata/testScriptData.xlsx");
 		Workbook wb = WorkbookFactory.create(fis);
-		String data = wb.getSheet(sheetName).getRow(rowNum).getCell(cellNum).getStringCellValue();
+		String data = wb.getSheet(sheetName).getRow(rowNum).getCell(cellNum).getStringCellValue();//Or we can use getStringCellValue(); method
 		
 		wb.close();
 		return data;
@@ -31,10 +31,19 @@ public class ExcelUtility {
 		
 	}
 	
+	public int getCellCount(String sheet, int rowNum) throws EncryptedDocumentException, IOException {
+		FileInputStream fis=new FileInputStream("./testdata/testScriptData.xlsx");
+		Workbook wb = WorkbookFactory.create(fis);
+		int cellNumber=wb.getSheet(sheet).getRow(rowNum).getLastCellNum();
+		
+		wb.close();
+		return cellNumber;
+	}
+	
 	public void setDataIntoExcel(String sheetName, int rowNum, int cellNum, String data) throws EncryptedDocumentException, IOException {
 		FileInputStream fis=new FileInputStream("./testdata/testScriptData.xlsx");
 		Workbook wb = WorkbookFactory.create(fis);
-		wb.getSheet(sheetName).getRow(rowNum).getCell(cellNum).setCellValue(data);
+//		wb.getSheet(sheetName).getRow(rowNum).getCell(cellNum).setCellValue(data);
 		
 		FileOutputStream fos=new FileOutputStream("./testdata/testScriptData.xlsx");
 		wb.write(fos);

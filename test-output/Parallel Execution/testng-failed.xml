@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite thread-count="2" parallel="tests" name="Failed suite [Parallel Execution]" guice-stage="DEVELOPMENT">
+  <parameter name="password" value="admin"/>
+  <parameter name="browser" value="firefox"/>
+  <parameter name="url" value="http://localhost:8888/"/>
+  <parameter name="username" value="admin"/>
+  <test thread-count="2" parallel="tests" name="TestRunner-Cross-Browser-Firefox(failed)">
+    <classes>
+      <class name="com.comcast.crm.contacttest.CreateContactWithMandatoryField">
+        <methods>
+          <include name="createContactWithOrgTest"/>
+          <include name="afterMethodTest"/>
+          <include name="afterClassTest"/>
+          <include name="beforeMethodTest"/>
+          <include name="beforeClassTest"/>
+          <include name="createContactWithSupport"/>
+          <include name="afterSuiteTest"/>
+          <include name="beforeSuiteTest"/>
+        </methods>
+      </class> <!-- com.comcast.crm.contacttest.CreateContactWithMandatoryField -->
+    </classes>
+  </test> <!-- TestRunner-Cross-Browser-Firefox(failed) -->
+</suite> <!-- Failed suite [Parallel Execution] -->

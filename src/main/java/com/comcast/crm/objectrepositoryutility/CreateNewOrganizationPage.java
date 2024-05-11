@@ -59,6 +59,7 @@ public class CreateNewOrganizationPage extends WebDriverUtility{
 
 	public void createOrg(String orgName, String industry, String type, WebDriverUtility wLib) {
 		orgNameEdt.sendKeys(orgName);
+		getOptions(industryDD);
 		select(industryDD, industry);
 		select(typeDD, type);
 		saveBtn.click();

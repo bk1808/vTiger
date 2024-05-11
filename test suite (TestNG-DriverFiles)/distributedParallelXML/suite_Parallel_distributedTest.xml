@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite thread-count="2" parallel="tests" name="Suite">
+  <test name="Test-1">
+    <classes>
+      <class name="com.comcast.crm.contacttest.CreateContactWithMandatoryField"/>
+    </classes>
+  </test> 
+   <test name="Test-2">
+    <classes>
+      <class name="com.comcast.crm.orgtest.CreateOrganizationTest"/>
+    </classes>
+  </test> 
+</suite> 
+<!-- Threads/thread count is also called as Test Runner [Test-1 & Test-2] 
+This XML file will execute two modules in two different browsers
+-->

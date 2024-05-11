@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="3" passed="3" failed="0" skipped="0">
+  <reporter-output>
+    <line>
+      <![CDATA[₹52,590]]>
+    </line>
+    <line>
+      <![CDATA[₹71,290]]>
+    </line>
+    <line>
+      <![CDATA[₹71,290]]>
+    </line>
+  </reporter-output>
+  <suite started-at="2024-05-11T10:47:40 IST" name="Default suite" finished-at="2024-05-11T10:48:22 IST" duration-ms="42285">
+    <groups>
+    </groups>
+    <test started-at="2024-05-11T10:47:40 IST" name="Default test" finished-at="2024-05-11T10:48:22 IST" duration-ms="42285">
+      <class name="practice.GetProductInfoTest">
+        <test-method signature="getProductInfoTest(java.lang.String,java.lang.String)[pri:0, instance:practice.GetProductInfoTest@22ff4249]" started-at="2024-05-11T10:47:43 IST" name="getProductInfoTest" data-provider="getData" finished-at="2024-05-11T10:47:59 IST" duration-ms="16427" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[iphone]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Apple iPhone 13 (128GB) - Green]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+            <line>
+              <![CDATA[₹52,590]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- getProductInfoTest -->
+        <test-method signature="getProductInfoTest(java.lang.String,java.lang.String)[pri:0, instance:practice.GetProductInfoTest@22ff4249]" started-at="2024-05-11T10:47:59 IST" name="getProductInfoTest" data-provider="getData" finished-at="2024-05-11T10:48:09 IST" duration-ms="10189" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[iphone]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Apple iPhone 15 (128 GB) - Blue]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+            <line>
+              <![CDATA[₹71,290]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- getProductInfoTest -->
+        <test-method signature="getProductInfoTest(java.lang.String,java.lang.String)[pri:0, instance:practice.GetProductInfoTest@22ff4249]" started-at="2024-05-11T10:48:09 IST" name="getProductInfoTest" data-provider="getData" finished-at="2024-05-11T10:48:22 IST" duration-ms="12754" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[iphone]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Apple iPhone 15 (128 GB) - Black]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+            <line>
+              <![CDATA[₹71,290]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- getProductInfoTest -->
+      </class> <!-- practice.GetProductInfoTest -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
