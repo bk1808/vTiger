@@ -33,7 +33,7 @@ public class ProductsListPage {
 		return ele2;
 	}
 		
-	//step-1 SAM's changes
+	//step-1 SAM's changes changed
 	
 	public WebElement getSearchNowBtn() {
 		return ele3;
