@@ -24,7 +24,7 @@ public class ProductsListPage {
 		return ele1;
 	}
 		
-	//step-2 commented by SAM
+	//step-2 commented by SAM added
 	
 	public WebElement getSearchNowBtn() {
 		return ele3;
