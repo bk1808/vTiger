@@ -10,7 +10,7 @@ import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 
 import com.aventstack.extentreports.Status;
-import com.comcast.crm.basetest.BaseClass;
+import com.comcast.crm.generic.basetest.BaseClass;
 import com.comcast.crm.generic.webdriverutility.UtilityClassObject;
 import com.comcast.crm.objectrepositoryutility.CreateNewOrganizationPage;
 import com.comcast.crm.objectrepositoryutility.HomePage;

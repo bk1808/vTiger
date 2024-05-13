@@ -1,4 +1,4 @@
-package com.comcast.crm.basetest;
+package com.comcast.crm.generic.basetest;
 
 import java.io.IOException;
 import java.sql.SQLException;

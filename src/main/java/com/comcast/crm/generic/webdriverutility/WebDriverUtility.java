@@ -1,5 +1,7 @@
 package com.comcast.crm.generic.webdriverutility;
 
+import java.awt.AWTException;
+import java.awt.Robot;
 import java.io.File;
 import java.time.Duration;
 import java.util.Iterator;
@@ -314,6 +316,12 @@ public class WebDriverUtility {
 
 		driver.get(path);
 	}
+	
+	public void handlingPrintPopUp() throws AWTException {
+		
+		Robot r = new Robot ();
+		
+	}
 
 	public void addValueToDiabledElements(WebDriver driver, String value) {
 
@@ -335,5 +343,6 @@ public class WebDriverUtility {
 		js.executeScript("document.getElementById('d2').click();");
 
 	}
+	
 
 }

@@ -3,7 +3,7 @@ package practice.test;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import com.comcast.crm.basetest.BaseClass;
+import com.comcast.crm.generic.basetest.BaseClass;
 
 public class InvoiceTestRetry extends BaseClass {
 

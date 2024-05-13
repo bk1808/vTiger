@@ -2,7 +2,7 @@ package practice;
 
 import org.testng.annotations.Test;
 
-import com.comcast.crm.basetest.BaseClass;
+import com.comcast.crm.generic.basetest.BaseClass;
 import com.comcast.crm.objectrepositoryutility.LoginPage;
 
 /**

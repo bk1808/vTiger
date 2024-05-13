@@ -10,6 +10,10 @@ import com.comcast.crm.generic.webdriverutility.WebDriverUtility;
 
 public class HomePage extends WebDriverUtility{
 
+	
+	@FindBy (linkText = "Products")
+	private WebElement prodLink;
+	
 	@FindBy (linkText = "Organizations")
 	private WebElement orgLink;
 
@@ -48,6 +52,11 @@ public class HomePage extends WebDriverUtility{
 
 	public WebElement getMoreLink() {
 		return moreLink;
+	}
+
+	
+	public WebElement getProdLink() {
+		return prodLink;
 	}
 
 	/*	if required we provide a business library, it's not necessry for
