@@ -15,17 +15,19 @@ import org.openqa.selenium.support.PageFactory;
 public class ProductsListPage {
 
 	@FindBy (xpath = "//img[@alt='Create Product...']")
-	private WebElement createProdImage;
+	private WebElement ele1;
 	
 	@FindBy (xpath = "//input[@name='submit']")
-	private WebElement ele2;
+	private WebElement ele3;
 
 	public WebElement getCreateProdImage() {
-		return createProdImage;
+		return ele1;
 	}
 		
+	//step-2 commented by SAM
+	
 	public WebElement getSearchNowBtn() {
-		return ele2;
+		return ele3;
 	}
 
 	public ProductsListPage(WebDriver driver) {
