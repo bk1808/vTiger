@@ -19,7 +19,7 @@ public class ProductsListPage {
 	
 	
 	@FindBy (xpath = "//input[@name='search_text']")
-	private WebElement ele2;
+	private WebElement ele3;
 	
 	public WebElement getCreateProdImage() {
 		return createProdImage;
@@ -27,7 +27,7 @@ public class ProductsListPage {
 	
 	
 	public WebElement getSearchEdtt() {
-		return ele2;
+		return ele3;
 	}
 
 
