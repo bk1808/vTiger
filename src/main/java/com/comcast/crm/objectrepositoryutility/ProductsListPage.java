@@ -16,11 +16,21 @@ public class ProductsListPage {
 
 	@FindBy (xpath = "//img[@alt='Create Product...']")
 	private WebElement createProdImage;
-
+	
+	
+	@FindBy (xpath = "//input[@name='search_text']")
+	private WebElement ele2;
+	
 	public WebElement getCreateProdImage() {
 		return createProdImage;
 	}
 	
+	
+	public WebElement getSearchEdtt() {
+		return ele2;
+	}
+
+
 	public ProductsListPage(WebDriver driver) {
 		PageFactory.initElements(driver, this);
 	}
