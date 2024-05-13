@@ -33,14 +33,12 @@ public class ProductsListPage {
 		return ele2;
 	}
 		
-	//step-2 commented by SAM added
+	//step-2 commented by STEVE added
 	
 	public WebElement getSearchNowBtn() {
 		return ele3;
 
 	}
-	
-	//step-1 commented on Steve
 
 	public ProductsListPage(WebDriver driver) {
 		PageFactory.initElements(driver, this);
