@@ -8,6 +8,7 @@ import org.openqa.selenium.support.PageFactory;
 
 public class ProductsListPage {
 
+
 		   
 	    //Yashoda
 		@FindBy (id ="bas_searchfield")
@@ -17,5 +18,13 @@ public class ProductsListPage {
 			return ele2;
 		
 	}
+
+
+	//GAGAN MS
+	
+}
+
+	//kavya committed the script
+
 	
 }
