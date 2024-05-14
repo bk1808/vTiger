@@ -5,34 +5,30 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+
 public class ProductsListPage {
 
-	@FindBy (xpath = "//img[@alt='Create Product...']")
-	private WebElement ele1;
-	
 
-	@FindBy (xpath = "//input[@class='txtBox']")
-	private WebElement ele2;
-
-	@FindBy (xpath = "//input[@name='submit']")
-	private WebElement ele3;
+	//commit by tushar
 
 
-	public WebElement getCreateProdImage() {
-		return ele1;
-	}
+		   
+	    //Yashoda
+		@FindBy (id ="bas_searchfield")
+		private WebElement ele2;
+
+		public WebElement getEle2() {
+			return ele2;
 		
-	public WebElement getSearchFieldEdt() {
-		return ele2;
 	}
+
+
+	//GAGAN MS
 	
-	public WebElement getSearchNowBtn() {
-		return ele3;
+}
 
-	}
+	//kavya committed the script
 
-	public ProductsListPage(WebDriver driver) {
-		PageFactory.initElements(driver, this);
-	}
+
 	
 }
