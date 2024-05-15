@@ -9,26 +9,28 @@ import org.openqa.selenium.support.PageFactory;
 public class ProductsListPage {
 
 
-	//commit by tushar
-
-
-		   
-	    //Yashoda
-		@FindBy (id ="bas_searchfield")
-		private WebElement ele2;
-
-		public WebElement getEle2() {
-			return ele2;
-		
-	}
-
-
-	//GAGAN MS
+	@FindBy (xpath = "//img[@alt='Create Product...']")
+	private WebElement ele1;
 	
-}
 
-	//kavya committed the script
+	@FindBy (xpath = "//input[@class='txtBox']")
+	private WebElement ele2;
+
+	@FindBy (xpath = "//input[@name='submit']")
+	private WebElement ele3;
 
 
+	public WebElement getCreateProdImage() {
+		return ele1;
+	}
+		
+	public WebElement getSearchFieldEdt() {
+		return ele2;
+	}
+		
+	//step-2 commented by SAM added
+	
+	public WebElement getSearchNowBtn() {
+		return ele3;
 	
 }
