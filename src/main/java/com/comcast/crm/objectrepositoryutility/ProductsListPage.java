@@ -5,32 +5,36 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import com.comcast.crm.generic.webdriverutility.WebDriverUtility;
 
-public class ProductsListPage {
 
+public class ProductsListPage extends WebDriverUtility {
 
 	@FindBy (xpath = "//img[@alt='Create Product...']")
-	private WebElement ele1;
-	
+	private WebElement createProdImage;
 
 	@FindBy (xpath = "//input[@class='txtBox']")
-	private WebElement ele2;
+	private WebElement searchFieldEdt;
 
 	@FindBy (xpath = "//input[@name='submit']")
-	private WebElement ele3;
+	private WebElement searchNowBtn;
 
-
+	WebDriver driver;
+	public ProductsListPage(WebDriver driver) {
+		this.driver = driver;
+		PageFactory.initElements(driver, this);
+	}
+	
 	public WebElement getCreateProdImage() {
-		return ele1;
+		return createProdImage;
 	}
 		
 	public WebElement getSearchFieldEdt() {
-		return ele2;
+		return searchFieldEdt;
 	}
-		
-	//step-2 commented by SAM added
 	
 	public WebElement getSearchNowBtn() {
-		return ele3;
+		return createProdImage;
+	}
 	
 }
