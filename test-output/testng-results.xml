@@ -1,79 +1,82 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="3" passed="3" failed="0" skipped="0">
+<testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
   <reporter-output>
     <line>
-      <![CDATA[₹52,590]]>
+      <![CDATA[last name in header is verified==PASS]]>
     </line>
     <line>
-      <![CDATA[₹71,290]]>
-    </line>
-    <line>
-      <![CDATA[₹71,290]]>
+      <![CDATA[last name in mandatory text field is verified==PASS]]>
     </line>
   </reporter-output>
-  <suite started-at="2024-05-11T10:47:40 IST" name="Default suite" finished-at="2024-05-11T10:48:22 IST" duration-ms="42285">
+  <suite started-at="2024-05-15T16:01:45 IST" name="Suite" finished-at="2024-05-15T16:03:09 IST" duration-ms="84289">
     <groups>
+      <group name="smoke test">
+        <method signature="CreateContactWithMandatoryField.createContactTest()[pri:0, instance:com.comcast.crm.contacttest.CreateContactWithMandatoryField@7bedc48a]" name="createContactTest" class="com.comcast.crm.contacttest.CreateContactWithMandatoryField"/>
+        <method signature="CreateOrganizationTest.createOrganizationTest()[pri:0, instance:com.comcast.crm.orgtest.CreateOrganizationTest@6200f9cb]" name="createOrganizationTest" class="com.comcast.crm.orgtest.CreateOrganizationTest"/>
+      </group> <!-- smoke test -->
+      <group name="regression test">
+        <method signature="CreateContactWithMandatoryField.createContactTest()[pri:0, instance:com.comcast.crm.contacttest.CreateContactWithMandatoryField@7bedc48a]" name="createContactTest" class="com.comcast.crm.contacttest.CreateContactWithMandatoryField"/>
+      </group> <!-- regression test -->
     </groups>
-    <test started-at="2024-05-11T10:47:40 IST" name="Default test" finished-at="2024-05-11T10:48:22 IST" duration-ms="42285">
-      <class name="practice.GetProductInfoTest">
-        <test-method signature="getProductInfoTest(java.lang.String,java.lang.String)[pri:0, instance:practice.GetProductInfoTest@22ff4249]" started-at="2024-05-11T10:47:43 IST" name="getProductInfoTest" data-provider="getData" finished-at="2024-05-11T10:47:59 IST" duration-ms="16427" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[iphone]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[Apple iPhone 13 (128GB) - Green]]>
-              </value>
-            </param>
-          </params>
+    <test started-at="2024-05-15T16:01:45 IST" name="Test" finished-at="2024-05-15T16:03:09 IST" duration-ms="84289">
+      <class name="com.comcast.crm.contacttest.CreateContactWithMandatoryField">
+        <test-method is-config="true" signature="beforeSuiteTest()[pri:0, instance:com.comcast.crm.contacttest.CreateContactWithMandatoryField@7bedc48a]" started-at="2024-05-15T16:01:45 IST" name="beforeSuiteTest" finished-at="2024-05-15T16:01:45 IST" duration-ms="20" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeSuiteTest -->
+        <test-method is-config="true" signature="beforeClassTest()[pri:0, instance:com.comcast.crm.contacttest.CreateContactWithMandatoryField@7bedc48a]" started-at="2024-05-15T16:01:45 IST" name="beforeClassTest" finished-at="2024-05-15T16:01:57 IST" duration-ms="11866" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeClassTest -->
+        <test-method is-config="true" signature="beforeMethodTest()[pri:0, instance:com.comcast.crm.contacttest.CreateContactWithMandatoryField@7bedc48a]" started-at="2024-05-15T16:01:57 IST" name="beforeMethodTest" finished-at="2024-05-15T16:02:05 IST" duration-ms="8134" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethodTest -->
+        <test-method signature="createContactTest()[pri:0, instance:com.comcast.crm.contacttest.CreateContactWithMandatoryField@7bedc48a]" started-at="2024-05-15T16:02:05 IST" name="createContactTest" finished-at="2024-05-15T16:02:27 IST" duration-ms="22288" status="PASS">
           <reporter-output>
             <line>
-              <![CDATA[₹52,590]]>
+              <![CDATA[last name in header is verified==PASS]]>
             </line>
-          </reporter-output>
-        </test-method> <!-- getProductInfoTest -->
-        <test-method signature="getProductInfoTest(java.lang.String,java.lang.String)[pri:0, instance:practice.GetProductInfoTest@22ff4249]" started-at="2024-05-11T10:47:59 IST" name="getProductInfoTest" data-provider="getData" finished-at="2024-05-11T10:48:09 IST" duration-ms="10189" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[iphone]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[Apple iPhone 15 (128 GB) - Blue]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
             <line>
-              <![CDATA[₹71,290]]>
+              <![CDATA[last name in mandatory text field is verified==PASS]]>
             </line>
           </reporter-output>
-        </test-method> <!-- getProductInfoTest -->
-        <test-method signature="getProductInfoTest(java.lang.String,java.lang.String)[pri:0, instance:practice.GetProductInfoTest@22ff4249]" started-at="2024-05-11T10:48:09 IST" name="getProductInfoTest" data-provider="getData" finished-at="2024-05-11T10:48:22 IST" duration-ms="12754" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[iphone]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[Apple iPhone 15 (128 GB) - Black]]>
-              </value>
-            </param>
-          </params>
+        </test-method> <!-- createContactTest -->
+        <test-method is-config="true" signature="afterMethodTest()[pri:0, instance:com.comcast.crm.contacttest.CreateContactWithMandatoryField@7bedc48a]" started-at="2024-05-15T16:02:27 IST" name="afterMethodTest" finished-at="2024-05-15T16:02:34 IST" duration-ms="6262" status="PASS">
           <reporter-output>
-            <line>
-              <![CDATA[₹71,290]]>
-            </line>
           </reporter-output>
-        </test-method> <!-- getProductInfoTest -->
-      </class> <!-- practice.GetProductInfoTest -->
-    </test> <!-- Default test -->
-  </suite> <!-- Default suite -->
+        </test-method> <!-- afterMethodTest -->
+        <test-method is-config="true" signature="afterClassTest()[pri:0, instance:com.comcast.crm.contacttest.CreateContactWithMandatoryField@7bedc48a]" started-at="2024-05-15T16:02:34 IST" name="afterClassTest" finished-at="2024-05-15T16:02:34 IST" duration-ms="541" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterClassTest -->
+        <test-method is-config="true" signature="afterSuiteTest()[pri:0, instance:com.comcast.crm.contacttest.CreateContactWithMandatoryField@7bedc48a]" started-at="2024-05-15T16:03:09 IST" name="afterSuiteTest" finished-at="2024-05-15T16:03:09 IST" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterSuiteTest -->
+      </class> <!-- com.comcast.crm.contacttest.CreateContactWithMandatoryField -->
+      <class name="com.comcast.crm.orgtest.CreateOrganizationTest">
+        <test-method is-config="true" signature="beforeClassTest()[pri:0, instance:com.comcast.crm.orgtest.CreateOrganizationTest@6200f9cb]" started-at="2024-05-15T16:02:34 IST" name="beforeClassTest" finished-at="2024-05-15T16:02:38 IST" duration-ms="4385" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeClassTest -->
+        <test-method is-config="true" signature="beforeMethodTest()[pri:0, instance:com.comcast.crm.orgtest.CreateOrganizationTest@6200f9cb]" started-at="2024-05-15T16:02:38 IST" name="beforeMethodTest" finished-at="2024-05-15T16:02:45 IST" duration-ms="6640" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethodTest -->
+        <test-method signature="createOrganizationTest()[pri:0, instance:com.comcast.crm.orgtest.CreateOrganizationTest@6200f9cb]" started-at="2024-05-15T16:02:45 IST" name="createOrganizationTest" finished-at="2024-05-15T16:03:03 IST" duration-ms="18097" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createOrganizationTest -->
+        <test-method is-config="true" signature="afterMethodTest()[pri:0, instance:com.comcast.crm.orgtest.CreateOrganizationTest@6200f9cb]" started-at="2024-05-15T16:03:03 IST" name="afterMethodTest" finished-at="2024-05-15T16:03:09 IST" duration-ms="5344" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethodTest -->
+        <test-method is-config="true" signature="afterClassTest()[pri:0, instance:com.comcast.crm.orgtest.CreateOrganizationTest@6200f9cb]" started-at="2024-05-15T16:03:09 IST" name="afterClassTest" finished-at="2024-05-15T16:03:09 IST" duration-ms="601" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterClassTest -->
+      </class> <!-- com.comcast.crm.orgtest.CreateOrganizationTest -->
+    </test> <!-- Test -->
+  </suite> <!-- Suite -->
 </testng-results>

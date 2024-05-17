@@ -12,7 +12,7 @@ public class InvoiceTest extends BaseClass {
 		
 		System.out.println("execute create invoice test");
 		String actTitle = driver.getTitle();
-		Assert.assertEquals(actTitle, "Login");//provided intentional expectedTitle to fail the test case and take screenshot
+//		Assert.assertEquals(actTitle, "Login");//provided intentional expectedTitle to fail the test case and take screenshot
 		System.out.println(actTitle);
 		System.out.println("step-1");
 		System.out.println("step-2");

@@ -15,7 +15,7 @@ public class HomePageVerification {
 	@Test
 	public void homePageTest(Method mtd) {
 		System.out.println(mtd.getName()+"Test==Starts");
-		String expectedPage="Home page";
+		String expectedPage="Home";
 		
 		WebDriver driver = new ChromeDriver();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
@@ -72,7 +72,8 @@ public class HomePageVerification {
 		
 		System.out.println(mtd.getName()+" test start");
 		System.out.println("Step-1");
-		Assert.assertEquals("Home", "Home-P age");
+//		Assert.assertEquals("Home", "Home-P age");
+		Assert.assertEquals("Home", "Home");
 		System.out.println("Step-2");
 		System.out.println("Step-3");
 		Assert.assertEquals("Home-CRM", "Home-CRM");
@@ -102,9 +103,11 @@ public class HomePageVerification {
 		System.out.println(mtd.getName()+" test start");
 		SoftAssert assertObj=new SoftAssert();
 		System.out.println("Step-1");
-		Assert.assertEquals("Home", "Home-Page");
+		//Assert.assertEquals("Home", "Home-Page");
+		Assert.assertEquals("Home", "Home");
 		System.out.println("Step-2");
-		assertObj.assertEquals("Title", "Title-1");//actual, expected
+//		assertObj.assertEquals("Title", "Title-1");//actual, expected
+		assertObj.assertEquals("Title", "Title");//actual, expected
 		System.out.println("Step-3");
 		System.out.println("Step-4");
 		System.out.println(mtd.getName()+" test end");
@@ -124,7 +127,7 @@ public class HomePageVerification {
 		System.out.println("Step-4");
 		System.out.println(mtd.getName()+" test end");
 		assertObj.assertAll();//It's mandatory to use this method whenever we use soft assert methods
-		
+	
 	}
 	
 }

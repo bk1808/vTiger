@@ -3,17 +3,17 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.comcast.crm.orgtest.CreateOrganizationTest">
+      <class name="practice.SearchContactTest">
         <methods>
-          <include name="createOrganizationTest"/>
-          <include name="afterMethodTest"/>
-          <include name="afterClassTest"/>
-          <include name="beforeMethodTest"/>
           <include name="beforeClassTest"/>
-          <include name="afterSuiteTest"/>
+          <include name="beforeMethodTest"/>
+          <include name="searchContactTest"/>
+          <include name="afterMethodTest"/>
           <include name="beforeSuiteTest"/>
+          <include name="afterClassTest"/>
+          <include name="afterSuiteTest"/>
         </methods>
-      </class> <!-- com.comcast.crm.orgtest.CreateOrganizationTest -->
+      </class> <!-- practice.SearchContactTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

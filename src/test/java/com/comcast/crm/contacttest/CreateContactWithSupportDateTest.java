@@ -1,5 +1,7 @@
 package com.comcast.crm.contacttest;
 
+import java.time.Duration;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
@@ -14,6 +16,7 @@ import com.comcast.crm.objectrepositoryutility.ContactsPage;
 import com.comcast.crm.objectrepositoryutility.CreateNewContactsPage;
 import com.comcast.crm.objectrepositoryutility.HomePage;
 import com.comcast.crm.objectrepositoryutility.LoginPage;
+import com.google.inject.spi.Element;
 
 public class CreateContactWithSupportDateTest extends BaseClass {
 
@@ -72,6 +75,7 @@ public class CreateContactWithSupportDateTest extends BaseClass {
 		String endDate = jLib.getrequiredDateYYYYMMDD(30);
 
 		cncp.getSuppStartDate().sendKeys(startDate);
+		cncp.getSuppEndDate().clear();
 		cncp.getSuppEndDate().sendKeys(endDate);
 
 		//		step-5: save the contact

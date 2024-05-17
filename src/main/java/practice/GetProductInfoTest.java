@@ -25,7 +25,7 @@ public class GetProductInfoTest {
 		
 //		search product on amazon
 		
-		driver.findElement(By.id("twotabsearchtextbox")).sendKeys(brandName, Keys.ENTER);
+		driver.findElement(By.xpath("//input[@id='twotabsearchtextbox' and @name='field-keywords']")).sendKeys(brandName, Keys.ENTER);
 		
 //		capture the price of the product using dynamic Xpath get the data from data provider annotation
 		String x="(//span[text()='"+productName+"'])[1]/../../../../div[3]/div[1]/div[1]/div[1]/div[1]/div[1]/a[1]/span[1]";

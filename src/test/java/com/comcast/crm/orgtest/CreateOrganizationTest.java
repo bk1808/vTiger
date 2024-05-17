@@ -17,11 +17,11 @@ import com.comcast.crm.objectrepositoryutility.HomePage;
 import com.comcast.crm.objectrepositoryutility.OrganizationInfoPage;
 import com.comcast.crm.objectrepositoryutility.OrganizationsPage;
 
-@Listeners (com.comcast.crm.generic.listenerutility.ListenerImplementationClass.class)
+//@Listeners (com.comcast.crm.generic.listenerutility.ListenerImplementationClass.class)
 public class CreateOrganizationTest extends BaseClass {
 
 //	Test-Case: 1
-	@Test (/*groups = "smoke test"*/)
+	@Test (groups = "smoke test")
 	public void createOrganizationTest() throws IOException, InterruptedException {
 //		create object of FileUtility for reading the data from commondata.properties and fetch the details		
 //		create the random number using Random Class of Java.util package
@@ -43,7 +43,7 @@ public class CreateOrganizationTest extends BaseClass {
 //		step-3: click on create organization button
 		UtilityClassObject.gettest().log(Status.INFO, "navigate to create organization page");
 		OrganizationsPage onp=new OrganizationsPage(driver);
-//		onp.getCreateNewOrgBtn().click();		
+		onp.getCreateNewOrgBtn().click();		
 		
 //		step-4: enter all the details and create new organization
 		UtilityClassObject.gettest().log(Status.INFO, "create organization");
@@ -69,7 +69,7 @@ public class CreateOrganizationTest extends BaseClass {
 	}
 
 //	Test-Case: 2
-	@Test (/*groups = "regression test"*/)
+	@Test (groups = "regression test")
 	public void createOrganizationWithIndustry() throws EncryptedDocumentException, IOException {
 		
 		String orgName=eLib.getDataFromExcel("org", 1, 2)+jLib.getRandomNumber();
@@ -124,7 +124,7 @@ public class CreateOrganizationTest extends BaseClass {
 	
 	
 //	Test-Case: 3
-	@Test (/*groups = "regression test"*/)
+	@Test (groups = "regression test")
 	public void createOrganizationWithPhoneNumber() throws EncryptedDocumentException, IOException {
 		
 		String orgName=eLib.getDataFromExcel("org", 1, 2)+jLib.getRandomNumber();
@@ -164,7 +164,7 @@ public class CreateOrganizationTest extends BaseClass {
 	
 	
 //	Test-Case: 4
-	@Test (/*groups = "regression test"*/)
+	@Test (groups = "regression test")
 	public void deleteOrganizationTest() throws EncryptedDocumentException, IOException, InterruptedException {
 		
 		String orgName=eLib.getDataFromExcel("org", 10, 2)+jLib.getRandomNumber();

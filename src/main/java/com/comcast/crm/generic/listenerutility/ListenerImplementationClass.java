@@ -78,7 +78,7 @@ public class ListenerImplementationClass extends BaseClass implements ITestListe
 		
 //		String testName = result.getName();
 		
-		TakesScreenshot ts = (TakesScreenshot) BaseClass.staticDriver;
+		TakesScreenshot ts = (TakesScreenshot) staticDriver;
 //		File src = ts.getScreenshotAs(OutputType.FILE);
 		
 //		TakesScreenshot ts = (TakesScreenshot) driver;

@@ -3,6 +3,7 @@ package com.comcast.crm.objectrepositoryutility;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.FindBys;
 import org.openqa.selenium.support.PageFactory;
 
 import com.comcast.crm.generic.webdriverutility.WebDriverUtility;
@@ -61,12 +62,14 @@ public class LoginPage extends WebDriverUtility{
 	 * @param url
 	 * @param username
 	 * @param password
+	 * @throws InterruptedException 
 	 */
 	
 	public void loginToApp(String url, String username, String password) {
 		maximizeWindow(driver);
 		waitForPageToLoad(driver);
 		getURL(driver, url);
+		waitForElementPresent(driver, usernameEdt);
 		usernameEdt.sendKeys(username);
 		passwordEdt.sendKeys(password);
 		loginBtn.click();
