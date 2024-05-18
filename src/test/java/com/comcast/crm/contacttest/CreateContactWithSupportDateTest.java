@@ -74,6 +74,7 @@ public class CreateContactWithSupportDateTest extends BaseClass {
 		String startDate = jLib.getSystemDateYYYYMMDD();
 		String endDate = jLib.getrequiredDateYYYYMMDD(30);
 
+		cncp.getSuppStartDate().clear();
 		cncp.getSuppStartDate().sendKeys(startDate);
 		cncp.getSuppEndDate().clear();
 		cncp.getSuppEndDate().sendKeys(endDate);

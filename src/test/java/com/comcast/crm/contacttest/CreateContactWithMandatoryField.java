@@ -107,13 +107,13 @@ public class CreateContactWithMandatoryField extends BaseClass {
 
 		/* capture the system date from java.util package and change it as needed */
 
+		
 		String startDate = jLib.getSystemDateYYYYMMDD();
 		String endDate = jLib.getrequiredDateYYYYMMDD(30);
-
+		cncp.getSuppStartDate().clear();
 		cncp.getSuppStartDate().sendKeys(startDate);
 
 		cncp.getSuppEndDate().clear();/* to add fresh date we need to clear the existing data */
-		Thread.sleep(2000);
 		cncp.getSuppEndDate().sendKeys(endDate);
 
 		/* step-5: save the contact */

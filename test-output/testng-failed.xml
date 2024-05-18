@@ -3,17 +3,17 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="practice.SearchContactTest">
+      <class name="com.comcast.crm.contacttest.CreateContactWithMandatoryField">
         <methods>
           <include name="beforeClassTest"/>
           <include name="beforeMethodTest"/>
-          <include name="searchContactTest"/>
           <include name="afterMethodTest"/>
           <include name="beforeSuiteTest"/>
           <include name="afterClassTest"/>
+          <include name="createContactWithSupport"/>
           <include name="afterSuiteTest"/>
         </methods>
-      </class> <!-- practice.SearchContactTest -->
+      </class> <!-- com.comcast.crm.contacttest.CreateContactWithMandatoryField -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
