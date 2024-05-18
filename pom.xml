@@ -35,8 +35,7 @@ LRT-->
 						<configuration>
 							<suiteXmlFiles>
 								<suiteXmlFile>
-									test suite
-									(TestNG-DriverFiles)/groupExecutionXML/suite_smoketest.xml</suiteXmlFile>
+									test suite (TestNG-DriverFiles)/groupExecutionXML/suite_smoketest.xml</suiteXmlFile>
 							</suiteXmlFiles>
 						</configuration>
 					</plugin>

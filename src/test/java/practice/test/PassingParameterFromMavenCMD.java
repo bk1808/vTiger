@@ -25,16 +25,27 @@ public class PassingParameterFromMavenCMD {
 		System.out.println("execute modify contact");
 	}
 	
+	public void deleteContactTest() {
+		
+		System.out.println("execute delete contact");
+	}
+	
 	@Test
 	public void createOrgTest() {
-		
+		System.out.println("execute create orgnization");
 		
 	}
 	
 	@Test
 	public void modifyOrgTest() {
+		System.out.println("execute modify orgnization");
 		
+	}
+	
+	@Test
+	public void deleteOrgTest() {
 		
+		System.out.println("execute delete contact");
 	}
 	
 	
