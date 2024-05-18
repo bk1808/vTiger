@@ -31,6 +31,7 @@ public class CreateOrganizationTest extends BaseClass {
 	 * @throws IOException
 	 * @throws InterruptedException
 	 */
+	
 	/* Test-Case: 1 */
 	@Test(groups = "smoke test")
 	public void createOrganizationTest() throws IOException, InterruptedException {
