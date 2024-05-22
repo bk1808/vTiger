@@ -143,6 +143,7 @@ public class CreateOrganizationTest extends BaseClass {
 		/* step-2: navigate to organization module */
 		UtilityClassObject.gettest().log(Status.INFO, "navigate to organization page");
 		HomePage hp = new HomePage(driver);
+		
 		hp.getOrgLink().click();
 
 		/* step-3: click on create organization button */

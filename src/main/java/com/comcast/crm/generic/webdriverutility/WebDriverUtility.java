@@ -2,6 +2,7 @@ package com.comcast.crm.generic.webdriverutility;
 
 import java.awt.AWTException;
 import java.awt.Robot;
+import java.awt.event.KeyEvent;
 import java.io.File;
 import java.time.Duration;
 import java.util.Iterator;
@@ -22,6 +23,13 @@ import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Reporter;
 
+/**
+ *
+ * This class consists of methods common for all web actions, these are reusable
+ * methods
+ * 
+ * 16-May-2024
+ */
 public class WebDriverUtility {
 
 	public void maximizeWindow(WebDriver driver) {
@@ -99,6 +107,10 @@ public class WebDriverUtility {
 		ele.getCssValue(attribute);
 	}
 
+	/*
+	 * This method can be used to switch bw tabs or windows based on the partial
+	 * text present in the URL
+	 */
 	public void switchToTabOnUrl(WebDriver driver, String partialURL) {
 
 		Set<String> set = driver.getWindowHandles();
@@ -116,6 +128,10 @@ public class WebDriverUtility {
 
 	}
 
+	/*
+	 * This method can be used to switch bw tabs or windows based on the partial
+	 * title present in the tab or window
+	 */
 	public void switchToTabOnTitle(WebDriver driver, String partialTitle) {
 
 		Set<String> set = driver.getWindowHandles();
@@ -158,6 +174,10 @@ public class WebDriverUtility {
 
 	}
 
+	/*
+	 * This method is useful to handle both dynamic and static dropdowns, and can be
+	 * used for values also
+	 */
 	public void select(WebElement element, String text) {
 
 		Select sel = new Select(element);
@@ -174,23 +194,24 @@ public class WebDriverUtility {
 
 	public void getAllSelectedOptions(WebElement element) {
 
-		Select sel=new Select(element);
+		Select sel = new Select(element);
 		List<WebElement> allSelected = sel.getAllSelectedOptions();
 
 		Iterator<WebElement> i = allSelected.iterator();
 		while (i.hasNext()) {
-			String selected=i.next().getText();
+			String selected = i.next().getText();
 			Reporter.log(selected, true);
 		}
 
 	}
 
+	/* This method is used to select all the options and print on the report */
 	public void getOptions(WebElement element) {
 
 		Select sel = new Select(element);
 		List<WebElement> allOptions = sel.getOptions();
 		int count = allOptions.size();
-		for (int i = 0; i <count; i++) {
+		for (int i = 0; i < count; i++) {
 
 			String option = allOptions.get(i).getText();
 			Reporter.log(option, true);
@@ -238,36 +259,36 @@ public class WebDriverUtility {
 
 		act.scrollByAmount(xAxis, yAxis).perform();
 	}
-
+	/*This method can be used to scroll to specific position from the origin*/
 	public void scrollFromOrigin(WebDriver driver, WheelInput.ScrollOrigin origin, int xAxis, int yAxis) {
 
-		Actions act = new Actions (driver);
+		Actions act = new Actions(driver);
 
 		act.scrollFromOrigin(origin, xAxis, yAxis);
 	}
-
+	/*This method can be used to scroll to specific position*/
 	public void scrollFromOriginToDestination(WebDriver driver, int xAxis, int yAxis) {
 
-		JavascriptExecutor js=(JavascriptExecutor) driver;
-		
-		js.executeScript("window.scrollBy("+xAxis+", "+yAxis+")", "");		
-		
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+
+		js.executeScript("window.scrollBy(" + xAxis + ", " + yAxis + ")", "");
+
 	}
-	
+
 	public void scrollToPosition(WebDriver driver, int xAxis, int yAxis) {
 
-		JavascriptExecutor js=(JavascriptExecutor) driver;
-		
-		js.executeScript("window.scrollTo("+xAxis+", "+yAxis+"");	
-		
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+
+		js.executeScript("window.scrollTo(" + xAxis + ", " + yAxis + "");
+
 	}
-	
+
 	public void scrollToHeight(WebDriver driver, int xAxis) {
-		
-		JavascriptExecutor js=(JavascriptExecutor) driver;
-		
-		js.executeScript("window.scrollTo("+xAxis+", document.body.scrollHeight)");	
-		
+
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+
+		js.executeScript("window.scrollTo(" + xAxis + ", document.body.scrollHeight)");
+
 	}
 
 	public void switchToAlertAccept(WebDriver driver) {
@@ -287,26 +308,27 @@ public class WebDriverUtility {
 	}
 
 	public void disableNotificationPopUp(WebDriver driver) {
-		ChromeOptions option=new ChromeOptions();
+		ChromeOptions option = new ChromeOptions();
 		option.addArguments("--diable-notifications");
 		new ChromeDriver(option);
 
 	}
 
 	public void openWindowIncognito(WebDriver driver) {
-		ChromeOptions option=new ChromeOptions();
+		ChromeOptions option = new ChromeOptions();
 		option.addArguments("--incognito");
 		new ChromeDriver(option);
 	}
+
 	public void startWindowMaxmized(WebDriver driver) {
-		ChromeOptions option=new ChromeOptions();
+		ChromeOptions option = new ChromeOptions();
 		option.addArguments("--start-maximized");
 		new ChromeDriver(option);
 
 	}
 
 	public void fileUploadPopUp(WebElement ele, String path) {
-		File f=new File(path);
+		File f = new File(path);
 		String absPath = f.getAbsolutePath();
 		ele.sendKeys(absPath);
 
@@ -316,33 +338,38 @@ public class WebDriverUtility {
 
 		driver.get(path);
 	}
-	
+
 	public void handlingPrintPopUp() throws AWTException {
-		
-		Robot r = new Robot ();
-		
+
+		Robot r = new Robot();
+		r.keyPress(KeyEvent.VK_ALT);
+		r.keyPress(KeyEvent.VK_SHIFT);
+		r.keyPress(KeyEvent.VK_TAB);
+		r.keyPress(KeyEvent.VK_CONTROL);
+		r.keyPress(KeyEvent.VK_C);
+		r.keyPress(KeyEvent.VK_V);
+
 	}
 
 	public void addValueToDiabledElements(WebDriver driver, String value) {
 
-		JavascriptExecutor js=(JavascriptExecutor) driver;
-		js.executeScript("document.getElementById('d2').value='"+value+"'");
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("document.getElementById('d2').value='" + value + "'");
 
 	}
 
 	public void deleteValueFromDiabledElements(WebDriver driver) {
 
-		JavascriptExecutor js=(JavascriptExecutor) driver;
+		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("document.getElementById('d2').value=''");
 
 	}
 
 	public void clickOnDiabledElements(WebDriver driver) {
 
-		JavascriptExecutor js=(JavascriptExecutor) driver;
+		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("document.getElementById('d2').click();");
 
 	}
-	
 
 }

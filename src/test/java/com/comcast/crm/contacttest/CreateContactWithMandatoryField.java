@@ -19,7 +19,7 @@ import com.comcast.crm.objectrepositoryutility.OrganizationInfoPage;
 import com.comcast.crm.objectrepositoryutility.OrganizationsPage;
 
 /**
- * This class represents the script four different test cases 
+ * This class represents the script for different test cases 
  * 
  * @author Praveen 10-May-2024
  */

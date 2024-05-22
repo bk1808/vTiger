@@ -17,7 +17,6 @@ import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Parameters;
 
-import com.aventstack.extentreports.Status;
 import com.comcast.crm.generic.databaseutility.DataBaseUtility;
 import com.comcast.crm.generic.fileutility.ExcelUtility;
 import com.comcast.crm.generic.fileutility.FileUtility;
@@ -28,6 +27,7 @@ import com.comcast.crm.objectrepositoryutility.HomePage;
 import com.comcast.crm.objectrepositoryutility.LoginPage;
 
 @Listeners(com.comcast.crm.generic.listenerutility.ListenerImplementationClass.class)
+
 public class BaseClass {
 // create objects for utility classes and make them public to access across the test scripts
 	public DataBaseUtility dLib = new DataBaseUtility();
@@ -36,8 +36,15 @@ public class BaseClass {
 	public ExcelUtility eLib = new ExcelUtility();
 	public WebDriverUtility wLib = new WebDriverUtility();
 	public WebDriver driver;// declaring it globally to use across the class
-	public static WebDriver staticDriver;// to use the local varibale outside the test method
-
+	
+	public static WebDriver staticDriver; /* The driver object has the browser session ID inside the @BeforeClass annotation method,
+	and we cannot create an object inside the BaseClass since baseclass has configuration methods, they are just instructions to test methods
+	and creating an object will not take any effect since @BeforeClass is a configuration annotation
+	to use the local varibale outside the method inside Listener implementation class
+	i have declared WebDriver as 'static' variable. But, static variables will not participate in parallel execution
+	hence, i have created a seperate UtilityClassObject to create instances of static variables
+	using ThreadLocal object. After making the 'driver' object as static, we need to pass the session id to 'sdriver'*/
+	
 	@BeforeSuite(groups = { "smoke test", "regression test" })
 	public void beforeSuiteTest() throws SQLException {
 		Reporter.log("====connect to Database, Report config====",true);
@@ -45,12 +52,12 @@ public class BaseClass {
 
 	}
 
-	// Parameters annotation from testNG
+	// Parameters annotation from testNG, whenever we pass the parameter from testNG.xml file we use this annotation 
 	@Parameters(/* "Browser" */)
 	@BeforeClass(groups = { "smoke test", "regression test" })
 	public void beforeClassTest(/* String browser */) throws IOException {
 		Reporter.log("==launch the browser==",true);
-		
+		/*String Browser = browser;*/
 		String browser = fLib.getDataFromMavenCMD("browser", fLib.getDataFromPropertiesFile("browser"));
 
 		if (browser.equals("chrome")) {

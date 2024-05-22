@@ -21,18 +21,15 @@ public class OrganizationChildPopupPage extends WebDriverUtility {
 	
 	WebDriver driver;
 	
-// this is how we need to initialise the web elements without pageFactory.initElements() method
-//	public OrganizationChildPopupPage(WebDriver driver, WebElement orgSearchEdt, 
-//			WebElement orgSearchDD, WebElement selectEle, WebElement searchBtn) {
-//		this.driver=driver;
-//		this.orgSearchEdt=orgSearchEdt;
-//		this.orgSearchDD=orgSearchDD;
-//		this.selectEle=selectEle;
-//		this.searchBtn=searchBtn;
-//	}
-	
-	
-	
+/* this is how we need to initialise the web elements without pageFactory.initElements() method
+	public OrganizationChildPopupPage(WebDriver driver, WebElement orgSearchEdt, 
+			WebElement orgSearchDD, WebElement selectEle, WebElement searchBtn) {
+		this.driver=driver;
+		this.orgSearchEdt=orgSearchEdt;
+		this.orgSearchDD=orgSearchDD;
+		this.selectEle=selectEle;
+		this.searchBtn=searchBtn;
+	}*/	
 	
 	public OrganizationChildPopupPage(WebDriver driver) {
 		this.driver=driver;

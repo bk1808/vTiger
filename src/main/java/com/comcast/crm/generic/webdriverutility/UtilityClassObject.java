@@ -10,7 +10,6 @@ public class UtilityClassObject {
 	public static ThreadLocal<ExtentTest> test = new ThreadLocal<ExtentTest>(); 
 	public static ThreadLocal<WebDriver> driver = new ThreadLocal<WebDriver>();
 	
-	
 //	We need to provide the getters and setters method to access and to use the ExtentTest and WebDriver object
 	public static ExtentTest gettest() {
 	
