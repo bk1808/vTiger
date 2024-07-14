@@ -14,15 +14,15 @@ import com.comcast.crm.generic.fileutility.ExcelUtility;
 import com.comcast.crm.generic.fileutility.FileUtility;
 import com.comcast.crm.generic.webdriverutility.JavaUtility;
 import com.comcast.crm.generic.webdriverutility.WebDriverUtility;
-import com.comcast.crm.objectrepositoryutility.ContactsInfoPage;
-import com.comcast.crm.objectrepositoryutility.ContactsPage;
-import com.comcast.crm.objectrepositoryutility.CreateNewContactsPage;
-import com.comcast.crm.objectrepositoryutility.CreateNewOrganizationPage;
-import com.comcast.crm.objectrepositoryutility.HomePage;
-import com.comcast.crm.objectrepositoryutility.LoginPage;
-import com.comcast.crm.objectrepositoryutility.OrganizationChildPopupPage;
-import com.comcast.crm.objectrepositoryutility.OrganizationInfoPage;
-import com.comcast.crm.objectrepositoryutility.OrganizationsPage;
+import com.comcast.crm.objectrepositoryutility.pomutility.ContactsInfoPage;
+import com.comcast.crm.objectrepositoryutility.pomutility.ContactsPage;
+import com.comcast.crm.objectrepositoryutility.pomutility.CreateNewContactsPage;
+import com.comcast.crm.objectrepositoryutility.pomutility.CreateNewOrganizationPage;
+import com.comcast.crm.objectrepositoryutility.pomutility.HomePage;
+import com.comcast.crm.objectrepositoryutility.pomutility.LoginPage;
+import com.comcast.crm.objectrepositoryutility.pomutility.OrganizationChildPopupPage;
+import com.comcast.crm.objectrepositoryutility.pomutility.OrganizationInfoPage;
+import com.comcast.crm.objectrepositoryutility.pomutility.OrganizationsPage;
 
 public class CreateContactWithOrg_IT {
 

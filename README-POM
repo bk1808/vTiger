@@ -1,0 +1,42 @@
+1. How to resolve"cannot find the declaration of element 'project' of POM.xml file":
+
+Windows > Preferences > XML (Wild Web Developer) > Click on checkbox of "Download external resources like referenced DTD,XSD"
+
+2. If the Java jar files show error whenver we download the framework from 'Git' we need to check the version of 'JDK' and all maven dependancies which supports the framework
+
+3. For new eclipse installation, the basic plugins required to develop framework are testNG, Maven, Maven Surefire, 
+
+Information related to POM.XML must read to trouble shoot the projects:
+
+The use of <scope> tag:
+
+In the <dependancy> of POM.xml file <scope> tag can take 6 types of values
+compile, provided, runtime, test, system and import. The scope is used to limit
+This scope is used to limit the transitivity of a dependency, and also to affect the classpath used for various build tasks.
+
+
+compile
+This is the default scope, used if none is specified. Compile dependencies are available in all classpaths of a project. Furthermore, those dependencies are propagated to dependent projects.
+provided
+This is much like compile, but indicates you expect the JDK or a container to provide the dependency at runtime. For example, when building a web application for the Java Enterprise Edition, you would set the dependency on the Servlet API and related Java EE APIs to scope provided because the web container provides those classes. A dependency with this scope is added to the classpath used for compilation and test, but not the runtime classpath. It is not transitive.
+runtime
+This scope indicates that the dependency is not required for compilation, but is for execution. Maven includes a dependency with this scope in the runtime and test classpaths, but not the compile classpath.
+test
+This scope indicates that the dependency is not required for normal use of the application, and is only available for the test compilation and execution phases. This scope is not transitive. Typically this scope is used for test libraries such as JUnit and Mockito. It is also used for non-test libraries such as Apache Commons IO if those libraries are used in unit tests (src/test/java) but not in the model code (src/main/java).
+system
+This scope is similar to provided except that you have to provide the JAR which contains it explicitly. The artifact is always available and is not looked up in a repository.
+import
+This scope is only supported on a dependency of type pom in the 
+dependencyManagement> section. It indicates the dependency is to be replaced with
+the effective list of dependencies in the specified POM's <dependencyManagement>
+section. Since they are replaced, dependencies with a scope of import do not
+actually participate in limiting the transitivity of a dependency.
+
+Refer this link: https://maven.apache.org/guides/introduction/introduction-to-dependency-mechanism.html#Dependency_Scope
+
+
+**Regarding .M2 & .P2 folders present in C://Users/Dell
+
+In Eclipse, the .m2 folder is your local Maven repository, which contains all
+downloaded Maven dependencies and plugins. The .p2 folder contains most of your
+Eclipse installation, including all plugins installed via the Eclipse Installer

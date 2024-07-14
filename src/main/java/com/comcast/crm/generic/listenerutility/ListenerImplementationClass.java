@@ -26,6 +26,7 @@ public class ListenerImplementationClass extends BaseClass implements ITestListe
 	
 	@Override
 	public void onStart(ISuite suite) {
+
 	System.out.println("Report configuration");
 	
 //	Advanced reporting script
@@ -74,6 +75,8 @@ public class ListenerImplementationClass extends BaseClass implements ITestListe
 	
 	@Override
 	public void onTestFailure(ITestResult result) {
+		
+		result.getStatus();
 		
 //		String testName = result.getName();
 		

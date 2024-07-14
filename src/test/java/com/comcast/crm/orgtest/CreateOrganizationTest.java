@@ -4,18 +4,16 @@ import java.io.IOException;
 
 import org.apache.poi.EncryptedDocumentException;
 import org.junit.Assert;
-import org.testng.Reporter;
-import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 
 import com.aventstack.extentreports.Status;
 import com.comcast.crm.generic.basetest.BaseClass;
 import com.comcast.crm.generic.webdriverutility.UtilityClassObject;
-import com.comcast.crm.objectrepositoryutility.CreateNewOrganizationPage;
-import com.comcast.crm.objectrepositoryutility.HomePage;
-import com.comcast.crm.objectrepositoryutility.OrganizationInfoPage;
-import com.comcast.crm.objectrepositoryutility.OrganizationsPage;
+import com.comcast.crm.objectrepositoryutility.pomutility.CreateNewOrganizationPage;
+import com.comcast.crm.objectrepositoryutility.pomutility.HomePage;
+import com.comcast.crm.objectrepositoryutility.pomutility.OrganizationInfoPage;
+import com.comcast.crm.objectrepositoryutility.pomutility.OrganizationsPage;
 
 /*@Listeners (com.comcast.crm.generic.listenerutility.ListenerImplementationClass.class)*/
 /**
@@ -49,7 +47,6 @@ public class CreateOrganizationTest extends BaseClass {
 
 		/* step-2: navigate to organization module */
 		UtilityClassObject.gettest().log(Status.INFO, "navigate to organization page");
-
 		String orgName = eLib.getDataFromExcel("org", 1, 2) + jLib.getRandomNumber(); // use 2 in place of column
 
 		HomePage hp = new HomePage(driver);

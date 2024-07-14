@@ -6,7 +6,6 @@ import java.net.URISyntaxException;
 import java.sql.SQLException;
 
 import org.openqa.selenium.Platform;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.annotations.AfterClass;
@@ -23,8 +22,8 @@ import com.comcast.crm.generic.fileutility.FileUtility;
 import com.comcast.crm.generic.webdriverutility.JavaUtility;
 import com.comcast.crm.generic.webdriverutility.UtilityClassObject;
 import com.comcast.crm.generic.webdriverutility.WebDriverUtility;
-import com.comcast.crm.objectrepositoryutility.HomePage;
-import com.comcast.crm.objectrepositoryutility.LoginPage;
+import com.comcast.crm.objectrepositoryutility.pomutility.HomePage;
+import com.comcast.crm.objectrepositoryutility.pomutility.LoginPage;
 
 public class GridBaseClass {
 // create objects for utility classes and make them public to access across the test scripts

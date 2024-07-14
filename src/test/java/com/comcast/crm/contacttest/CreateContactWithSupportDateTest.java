@@ -12,10 +12,10 @@ import com.comcast.crm.generic.fileutility.ExcelUtility;
 import com.comcast.crm.generic.fileutility.FileUtility;
 import com.comcast.crm.generic.webdriverutility.JavaUtility;
 import com.comcast.crm.generic.webdriverutility.WebDriverUtility;
-import com.comcast.crm.objectrepositoryutility.ContactsPage;
-import com.comcast.crm.objectrepositoryutility.CreateNewContactsPage;
-import com.comcast.crm.objectrepositoryutility.HomePage;
-import com.comcast.crm.objectrepositoryutility.LoginPage;
+import com.comcast.crm.objectrepositoryutility.pomutility.ContactsPage;
+import com.comcast.crm.objectrepositoryutility.pomutility.CreateNewContactsPage;
+import com.comcast.crm.objectrepositoryutility.pomutility.HomePage;
+import com.comcast.crm.objectrepositoryutility.pomutility.LoginPage;
 import com.google.inject.spi.Element;
 
 public class CreateContactWithSupportDateTest extends BaseClass {

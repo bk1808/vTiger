@@ -50,41 +50,41 @@
       <![CDATA[====close Databse, Report backup====]]>
     </line>
   </reporter-output>
-  <suite started-at="2024-05-20T18:16:10 IST" name="Default suite" finished-at="2024-05-20T18:17:55 IST" duration-ms="105225">
+  <suite started-at="2024-06-19T11:55:42 IST" name="Default suite" finished-at="2024-06-19T11:58:42 IST" duration-ms="179966">
     <groups>
       <group name="smoke test">
-        <method signature="CreateContactWithMandatoryField.createContactTest()[pri:0, instance:com.comcast.crm.contacttest.CreateContactWithMandatoryField@4116aac9]" name="createContactTest" class="com.comcast.crm.contacttest.CreateContactWithMandatoryField"/>
+        <method signature="CreateContactWithMandatoryField.createContactTest()[pri:0, instance:com.comcast.crm.contacttest.CreateContactWithMandatoryField@13b6aecc]" name="createContactTest" class="com.comcast.crm.contacttest.CreateContactWithMandatoryField"/>
       </group> <!-- smoke test -->
       <group name="regression test">
-        <method signature="CreateContactWithMandatoryField.createContactTest()[pri:0, instance:com.comcast.crm.contacttest.CreateContactWithMandatoryField@4116aac9]" name="createContactTest" class="com.comcast.crm.contacttest.CreateContactWithMandatoryField"/>
-        <method signature="CreateContactWithMandatoryField.createContactWithOrgTest()[pri:0, instance:com.comcast.crm.contacttest.CreateContactWithMandatoryField@4116aac9]" name="createContactWithOrgTest" class="com.comcast.crm.contacttest.CreateContactWithMandatoryField"/>
-        <method signature="CreateContactWithMandatoryField.createContactWithSupport()[pri:0, instance:com.comcast.crm.contacttest.CreateContactWithMandatoryField@4116aac9]" name="createContactWithSupport" class="com.comcast.crm.contacttest.CreateContactWithMandatoryField"/>
+        <method signature="CreateContactWithMandatoryField.createContactTest()[pri:0, instance:com.comcast.crm.contacttest.CreateContactWithMandatoryField@13b6aecc]" name="createContactTest" class="com.comcast.crm.contacttest.CreateContactWithMandatoryField"/>
+        <method signature="CreateContactWithMandatoryField.createContactWithOrgTest()[pri:0, instance:com.comcast.crm.contacttest.CreateContactWithMandatoryField@13b6aecc]" name="createContactWithOrgTest" class="com.comcast.crm.contacttest.CreateContactWithMandatoryField"/>
+        <method signature="CreateContactWithMandatoryField.createContactWithSupport()[pri:0, instance:com.comcast.crm.contacttest.CreateContactWithMandatoryField@13b6aecc]" name="createContactWithSupport" class="com.comcast.crm.contacttest.CreateContactWithMandatoryField"/>
       </group> <!-- regression test -->
     </groups>
-    <test started-at="2024-05-20T18:16:10 IST" name="Default test" finished-at="2024-05-20T18:17:55 IST" duration-ms="105225">
+    <test started-at="2024-06-19T11:55:42 IST" name="Default test" finished-at="2024-06-19T11:58:42 IST" duration-ms="179966">
       <class name="com.comcast.crm.contacttest.CreateContactWithMandatoryField">
-        <test-method is-config="true" signature="beforeSuiteTest()[pri:0, instance:com.comcast.crm.contacttest.CreateContactWithMandatoryField@4116aac9]" started-at="2024-05-20T18:16:10 IST" name="beforeSuiteTest" finished-at="2024-05-20T18:16:10 IST" duration-ms="26" status="PASS">
+        <test-method is-config="true" signature="beforeSuiteTest()[pri:0, instance:com.comcast.crm.contacttest.CreateContactWithMandatoryField@13b6aecc]" started-at="2024-06-19T11:55:42 IST" name="beforeSuiteTest" finished-at="2024-06-19T11:55:42 IST" duration-ms="53" status="PASS">
           <reporter-output>
             <line>
               <![CDATA[====connect to Database, Report config====]]>
             </line>
           </reporter-output>
         </test-method> <!-- beforeSuiteTest -->
-        <test-method is-config="true" signature="beforeClassTest()[pri:0, instance:com.comcast.crm.contacttest.CreateContactWithMandatoryField@4116aac9]" started-at="2024-05-20T18:16:10 IST" name="beforeClassTest" finished-at="2024-05-20T18:16:15 IST" duration-ms="5559" status="PASS">
+        <test-method is-config="true" signature="beforeClassTest()[pri:0, instance:com.comcast.crm.contacttest.CreateContactWithMandatoryField@13b6aecc]" started-at="2024-06-19T11:55:42 IST" name="beforeClassTest" finished-at="2024-06-19T11:56:22 IST" duration-ms="40374" status="PASS">
           <reporter-output>
             <line>
               <![CDATA[==launch the browser==]]>
             </line>
           </reporter-output>
         </test-method> <!-- beforeClassTest -->
-        <test-method is-config="true" signature="beforeMethodTest()[pri:0, instance:com.comcast.crm.contacttest.CreateContactWithMandatoryField@4116aac9]" started-at="2024-05-20T18:16:15 IST" name="beforeMethodTest" finished-at="2024-05-20T18:16:21 IST" duration-ms="5721" status="PASS">
+        <test-method is-config="true" signature="beforeMethodTest()[pri:0, instance:com.comcast.crm.contacttest.CreateContactWithMandatoryField@13b6aecc]" started-at="2024-06-19T11:56:22 IST" name="beforeMethodTest" finished-at="2024-06-19T11:56:50 IST" duration-ms="27853" status="PASS">
           <reporter-output>
             <line>
               <![CDATA[==login to application==]]>
             </line>
           </reporter-output>
         </test-method> <!-- beforeMethodTest -->
-        <test-method signature="createContactTest()[pri:0, instance:com.comcast.crm.contacttest.CreateContactWithMandatoryField@4116aac9]" started-at="2024-05-20T18:16:21 IST" name="createContactTest" finished-at="2024-05-20T18:16:38 IST" duration-ms="16883" status="PASS">
+        <test-method signature="createContactTest()[pri:0, instance:com.comcast.crm.contacttest.CreateContactWithMandatoryField@13b6aecc]" started-at="2024-06-19T11:56:50 IST" name="createContactTest" finished-at="2024-06-19T11:57:31 IST" duration-ms="40786" status="PASS">
           <reporter-output>
             <line>
               <![CDATA[last name in header is verified==PASS]]>
@@ -94,21 +94,21 @@
             </line>
           </reporter-output>
         </test-method> <!-- createContactTest -->
-        <test-method is-config="true" signature="afterMethodTest()[pri:0, instance:com.comcast.crm.contacttest.CreateContactWithMandatoryField@4116aac9]" started-at="2024-05-20T18:16:38 IST" name="afterMethodTest" finished-at="2024-05-20T18:16:44 IST" duration-ms="6247" status="PASS">
+        <test-method is-config="true" signature="afterMethodTest()[pri:0, instance:com.comcast.crm.contacttest.CreateContactWithMandatoryField@13b6aecc]" started-at="2024-06-19T11:57:31 IST" name="afterMethodTest" finished-at="2024-06-19T11:57:37 IST" duration-ms="6112" status="PASS">
           <reporter-output>
             <line>
               <![CDATA[==logout of application==]]>
             </line>
           </reporter-output>
         </test-method> <!-- afterMethodTest -->
-        <test-method is-config="true" signature="beforeMethodTest()[pri:0, instance:com.comcast.crm.contacttest.CreateContactWithMandatoryField@4116aac9]" started-at="2024-05-20T18:16:44 IST" name="beforeMethodTest" finished-at="2024-05-20T18:16:55 IST" duration-ms="10824" status="PASS">
+        <test-method is-config="true" signature="beforeMethodTest()[pri:0, instance:com.comcast.crm.contacttest.CreateContactWithMandatoryField@13b6aecc]" started-at="2024-06-19T11:57:37 IST" name="beforeMethodTest" finished-at="2024-06-19T11:57:41 IST" duration-ms="4474" status="PASS">
           <reporter-output>
             <line>
               <![CDATA[==login to application==]]>
             </line>
           </reporter-output>
         </test-method> <!-- beforeMethodTest -->
-        <test-method signature="createContactWithOrgTest()[pri:0, instance:com.comcast.crm.contacttest.CreateContactWithMandatoryField@4116aac9]" started-at="2024-05-20T18:16:55 IST" name="createContactWithOrgTest" finished-at="2024-05-20T18:17:25 IST" duration-ms="29497" status="PASS">
+        <test-method signature="createContactWithOrgTest()[pri:0, instance:com.comcast.crm.contacttest.CreateContactWithMandatoryField@13b6aecc]" started-at="2024-06-19T11:57:41 IST" name="createContactWithOrgTest" finished-at="2024-06-19T11:58:11 IST" duration-ms="29950" status="PASS">
           <reporter-output>
             <line>
               <![CDATA[last name text field is verified==PASS]]>
@@ -118,21 +118,21 @@
             </line>
           </reporter-output>
         </test-method> <!-- createContactWithOrgTest -->
-        <test-method is-config="true" signature="afterMethodTest()[pri:0, instance:com.comcast.crm.contacttest.CreateContactWithMandatoryField@4116aac9]" started-at="2024-05-20T18:17:25 IST" name="afterMethodTest" finished-at="2024-05-20T18:17:29 IST" duration-ms="4827" status="PASS">
+        <test-method is-config="true" signature="afterMethodTest()[pri:0, instance:com.comcast.crm.contacttest.CreateContactWithMandatoryField@13b6aecc]" started-at="2024-06-19T11:58:11 IST" name="afterMethodTest" finished-at="2024-06-19T11:58:16 IST" duration-ms="4862" status="PASS">
           <reporter-output>
             <line>
               <![CDATA[==logout of application==]]>
             </line>
           </reporter-output>
         </test-method> <!-- afterMethodTest -->
-        <test-method is-config="true" signature="beforeMethodTest()[pri:0, instance:com.comcast.crm.contacttest.CreateContactWithMandatoryField@4116aac9]" started-at="2024-05-20T18:17:29 IST" name="beforeMethodTest" finished-at="2024-05-20T18:17:33 IST" duration-ms="4051" status="PASS">
+        <test-method is-config="true" signature="beforeMethodTest()[pri:0, instance:com.comcast.crm.contacttest.CreateContactWithMandatoryField@13b6aecc]" started-at="2024-06-19T11:58:16 IST" name="beforeMethodTest" finished-at="2024-06-19T11:58:20 IST" duration-ms="4094" status="PASS">
           <reporter-output>
             <line>
               <![CDATA[==login to application==]]>
             </line>
           </reporter-output>
         </test-method> <!-- beforeMethodTest -->
-        <test-method signature="createContactWithSupport()[pri:0, instance:com.comcast.crm.contacttest.CreateContactWithMandatoryField@4116aac9]" started-at="2024-05-20T18:17:33 IST" name="createContactWithSupport" finished-at="2024-05-20T18:17:49 IST" duration-ms="15686" status="PASS">
+        <test-method signature="createContactWithSupport()[pri:0, instance:com.comcast.crm.contacttest.CreateContactWithMandatoryField@13b6aecc]" started-at="2024-06-19T11:58:20 IST" name="createContactWithSupport" finished-at="2024-06-19T11:58:36 IST" duration-ms="15320" status="PASS">
           <reporter-output>
             <line>
               <![CDATA[start date text field is verified==PASS]]>
@@ -142,21 +142,21 @@
             </line>
           </reporter-output>
         </test-method> <!-- createContactWithSupport -->
-        <test-method is-config="true" signature="afterMethodTest()[pri:0, instance:com.comcast.crm.contacttest.CreateContactWithMandatoryField@4116aac9]" started-at="2024-05-20T18:17:49 IST" name="afterMethodTest" finished-at="2024-05-20T18:17:54 IST" duration-ms="5317" status="PASS">
+        <test-method is-config="true" signature="afterMethodTest()[pri:0, instance:com.comcast.crm.contacttest.CreateContactWithMandatoryField@13b6aecc]" started-at="2024-06-19T11:58:36 IST" name="afterMethodTest" finished-at="2024-06-19T11:58:41 IST" duration-ms="5445" status="PASS">
           <reporter-output>
             <line>
               <![CDATA[==logout of application==]]>
             </line>
           </reporter-output>
         </test-method> <!-- afterMethodTest -->
-        <test-method is-config="true" signature="afterClassTest()[pri:0, instance:com.comcast.crm.contacttest.CreateContactWithMandatoryField@4116aac9]" started-at="2024-05-20T18:17:54 IST" name="afterClassTest" finished-at="2024-05-20T18:17:55 IST" duration-ms="493" status="PASS">
+        <test-method is-config="true" signature="afterClassTest()[pri:0, instance:com.comcast.crm.contacttest.CreateContactWithMandatoryField@13b6aecc]" started-at="2024-06-19T11:58:41 IST" name="afterClassTest" finished-at="2024-06-19T11:58:42 IST" duration-ms="550" status="PASS">
           <reporter-output>
             <line>
               <![CDATA[==close the browser==]]>
             </line>
           </reporter-output>
         </test-method> <!-- afterClassTest -->
-        <test-method is-config="true" signature="afterSuiteTest()[pri:0, instance:com.comcast.crm.contacttest.CreateContactWithMandatoryField@4116aac9]" started-at="2024-05-20T18:17:55 IST" name="afterSuiteTest" finished-at="2024-05-20T18:17:55 IST" duration-ms="0" status="PASS">
+        <test-method is-config="true" signature="afterSuiteTest()[pri:0, instance:com.comcast.crm.contacttest.CreateContactWithMandatoryField@13b6aecc]" started-at="2024-06-19T11:58:42 IST" name="afterSuiteTest" finished-at="2024-06-19T11:58:42 IST" duration-ms="1" status="PASS">
           <reporter-output>
             <line>
               <![CDATA[====close Databse, Report backup====]]>

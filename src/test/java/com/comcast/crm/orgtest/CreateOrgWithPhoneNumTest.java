@@ -12,10 +12,10 @@ import com.comcast.crm.generic.fileutility.ExcelUtility;
 import com.comcast.crm.generic.fileutility.FileUtility;
 import com.comcast.crm.generic.webdriverutility.JavaUtility;
 import com.comcast.crm.generic.webdriverutility.WebDriverUtility;
-import com.comcast.crm.objectrepositoryutility.CreateNewOrganizationPage;
-import com.comcast.crm.objectrepositoryutility.HomePage;
-import com.comcast.crm.objectrepositoryutility.LoginPage;
-import com.comcast.crm.objectrepositoryutility.OrganizationsPage;
+import com.comcast.crm.objectrepositoryutility.pomutility.CreateNewOrganizationPage;
+import com.comcast.crm.objectrepositoryutility.pomutility.HomePage;
+import com.comcast.crm.objectrepositoryutility.pomutility.LoginPage;
+import com.comcast.crm.objectrepositoryutility.pomutility.OrganizationsPage;
 
 public class CreateOrgWithPhoneNumTest{
 

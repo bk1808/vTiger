@@ -1,6 +1,7 @@
 package com.comcast.crm.generic.basetest;
 
 import java.io.IOException;
+import java.lang.reflect.Method;
 import java.sql.SQLException;
 
 import org.openqa.selenium.WebDriver;
@@ -23,8 +24,8 @@ import com.comcast.crm.generic.fileutility.FileUtility;
 import com.comcast.crm.generic.webdriverutility.JavaUtility;
 import com.comcast.crm.generic.webdriverutility.UtilityClassObject;
 import com.comcast.crm.generic.webdriverutility.WebDriverUtility;
-import com.comcast.crm.objectrepositoryutility.HomePage;
-import com.comcast.crm.objectrepositoryutility.LoginPage;
+import com.comcast.crm.objectrepositoryutility.pomutility.HomePage;
+import com.comcast.crm.objectrepositoryutility.pomutility.LoginPage;
 
 @Listeners(com.comcast.crm.generic.listenerutility.ListenerImplementationClass.class)
 
@@ -53,7 +54,7 @@ public class BaseClass {
 	}
 
 	// Parameters annotation from testNG, whenever we pass the parameter from testNG.xml file we use this annotation 
-	@Parameters(/* "Browser" */)
+	@Parameters(/*"Browser"*/)
 	@BeforeClass(groups = { "smoke test", "regression test" })
 	public void beforeClassTest(/* String browser */) throws IOException {
 		Reporter.log("==launch the browser==",true);
@@ -90,6 +91,7 @@ public class BaseClass {
 
 	@AfterMethod(groups = { "smoke test", "regression test" })
 	public void afterMethodTest() throws InterruptedException {
+		
 		Reporter.log("==logout of application==",true);
 		HomePage hp = new HomePage(driver);
 		Thread.sleep(3000);

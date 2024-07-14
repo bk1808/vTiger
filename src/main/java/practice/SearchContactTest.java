@@ -6,7 +6,7 @@ import org.testng.annotations.Test;
 
 import com.comcast.crm.generic.basetest.BaseClass;
 import com.comcast.crm.generic.fileutility.FileUtility;
-import com.comcast.crm.objectrepositoryutility.LoginPage;
+import com.comcast.crm.objectrepositoryutility.pomutility.LoginPage;
 
 /**
  * Description: Test class for contact module
