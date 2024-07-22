@@ -327,6 +327,13 @@ public class WebDriverUtility {
 
 	}
 
+	public void startHeadlessExectuion(WebDriver driver) {
+		ChromeOptions option = new ChromeOptions();
+		option.addArguments("--headless");
+		new ChromeDriver(option);
+
+	}
+
 	public void fileUploadPopUp(WebElement ele, String path) {
 		File f = new File(path);
 		String absPath = f.getAbsolutePath();

@@ -1,13 +1,15 @@
 package com.comcast.crm.generic.basetest;
 
 import java.io.IOException;
-import java.lang.reflect.Method;
 import java.sql.SQLException;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.edge.EdgeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxOptions;
 import org.testng.Reporter;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
@@ -26,6 +28,8 @@ import com.comcast.crm.generic.webdriverutility.UtilityClassObject;
 import com.comcast.crm.generic.webdriverutility.WebDriverUtility;
 import com.comcast.crm.objectrepositoryutility.pomutility.HomePage;
 import com.comcast.crm.objectrepositoryutility.pomutility.LoginPage;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
 
 @Listeners(com.comcast.crm.generic.listenerutility.ListenerImplementationClass.class)
 
@@ -59,16 +63,23 @@ public class BaseClass {
 	public void beforeClassTest(/* String browser */) throws IOException {
 		Reporter.log("==launch the browser==",true);
 		/*String Browser = browser;*/
-		String browser = fLib.getDataFromMavenCMD("browser", fLib.getDataFromPropertiesFile("browser"));
-
-		if (browser.equals("chrome")) {
-			driver = new ChromeDriver();
-		} else if (browser.equals("firefox")) {
-			driver = new FirefoxDriver();
-		} else if (browser.equals("edge")) {
-			driver = new EdgeDriver();
-		} else {
-			driver = new ChromeDriver();
+		 String BROWSER = System.getProperty("browser" , fLib.getDataFromPropertiesFile("browser"));
+		if(BROWSER.equals("chrome")) {
+			WebDriverManager.chromedriver().setup();
+			ChromeOptions chromeOptions = new ChromeOptions();
+			driver = new ChromeDriver(chromeOptions);
+		}else if(BROWSER.equals("firefox")) {
+			WebDriverManager.firefoxdriver().setup();
+			FirefoxOptions firefoxOption = new FirefoxOptions();
+			driver = new FirefoxDriver(firefoxOption);
+		}else if(BROWSER.equals("edge")) {
+			WebDriverManager.edgedriver().setup();
+			EdgeOptions edgeOption = new EdgeOptions();
+			driver = new EdgeDriver(edgeOption);
+		}else {
+			WebDriverManager.chromedriver().setup();
+			ChromeOptions chromeOptions = new ChromeOptions();
+			driver = new ChromeDriver(chromeOptions);
 		}
 		staticDriver = driver;// staticDriver is temperory variable to use the driver object inside the
 								// Listener implementation class
