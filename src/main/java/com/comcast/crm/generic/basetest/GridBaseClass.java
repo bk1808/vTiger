@@ -1,10 +1,12 @@
 package com.comcast.crm.generic.basetest;
 
 import java.io.IOException;
-import java.net.URI;
 import java.net.URISyntaxException;
 import java.sql.SQLException;
 
+import javax.print.DocFlavor.URL;
+
+import org.openqa.selenium.Capabilities;
 import org.openqa.selenium.Platform;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
@@ -55,7 +57,8 @@ public class GridBaseClass {
 		java.net.URI class came later, in Java 4. */
 		
 		String url = "http://192.168.26.1:4444";
-		driver = new RemoteWebDriver((new URI(url)).toURL(),dc);
+		driver = new RemoteWebDriver((Capabilities) (new URL(url)));
+//				(url)),dc)
 		
 		if(browser.equalsIgnoreCase("chrome")) {
 			dc.setBrowserName("chrome");

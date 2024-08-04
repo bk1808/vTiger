@@ -1,13 +1,21 @@
 package practice;
 
-import org.testng.annotations.Test;
-
 public class B {
 
 	
-	@Test
-	public void add() {
+	String name;
+	int id;
+	int age;
+	
+	public B() {
 		
-		System.out.println("test class");
 	}
+	
+	public B(String name, int id, int age) {
+		this.name = name;
+		this.id = id;
+		this.age = age;
+	}
+	
+	
 }

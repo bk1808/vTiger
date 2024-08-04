@@ -56,7 +56,7 @@ public class BaseClass {
 		//		dLib.getDBConnection();
 
 	}
-
+	
 	// Parameters annotation from testNG, whenever we pass the parameter from testNG.xml file we use this annotation 
 	@Parameters(/*"Browser"*/)
 	@BeforeClass(groups = { "smoke test", "regression test" })
